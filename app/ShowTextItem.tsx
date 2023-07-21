@@ -1,4 +1,4 @@
-import ColoredLine from "./ColoredLine";
+import ColoredLine from './ColoredLine';
 
 interface ShowTextItemProps {
   title: string;
@@ -11,7 +11,7 @@ export default function ShowTextItem({ title }: ShowTextItemProps) {
         {title}
       </button>
       <ColoredLine
-        displayOn="bottom"
+        displayOn='bottom'
       />
     </li>
   );

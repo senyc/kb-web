@@ -2,9 +2,9 @@ interface OptionButtonProps {
   color?: 'one' | 'two';
   controllingSection: string;
   currentSection: string;
-  onClick: any;
-  onMouseLeave: any;
-  onMouseOver: any;
+  onClick: (newSection: string) => void;
+  onMouseLeave: () => void;
+  onMouseOver: (newSection: string) => void;
 }
 export default function OptionButton({
   color = 'one',
@@ -14,14 +14,13 @@ export default function OptionButton({
   onMouseLeave,
   onMouseOver,
 }: OptionButtonProps) {
-  const shouldColor = currentSection === controllingSection
+  const shouldColor = currentSection === controllingSection;
   return (
     <button
       onClick={() => onClick(controllingSection)}
       onMouseOver={() => onMouseOver(controllingSection)}
       onMouseLeave={onMouseLeave}
-      // onFocus={() => onMouseOver(controllingSection)}
       className={`hover:scale-125 w-3 h-3 rounded-full bg${shouldColor ? color : '-text'}`}>
     </button>
-  )
+  );
 }

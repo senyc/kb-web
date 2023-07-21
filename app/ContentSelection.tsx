@@ -1,10 +1,11 @@
 'use client';
+
 import { useState } from 'react';
 
-import SectionButton from "./SectionButton";
-import SectionItems from "./SectionItems";
-import SectionSelection from "./SectionSelection";
-import SmallTopRightBorder from "./SmallTopRightBorder";
+import SectionButton from './SectionButton';
+import SectionItems from './SectionItems';
+import SectionSelection from './SectionSelection';
+import SmallTopRightBorder from './SmallTopRightBorder';
 
 export default function ContentSelection() {
   const [currentSection, setCurrentSection] = useState('development')
@@ -29,7 +30,7 @@ export default function ContentSelection() {
           setCurrentSection={setCurrentSection}
         />
       </div>
-      <div className=' relative flex flex-col ml-6 mt-0 '>
+      <div className='relative flex flex-col ml-6 mt-0 '>
         <SmallTopRightBorder
         />
         <SectionItems

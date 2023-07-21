@@ -12,15 +12,15 @@ const BottomRightCorner = ({ height, width }: BottomRightCornerProps) => {
     >
       <defs>
         <linearGradient
-          id="grad1"
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="100%"
+          id='grad1'
+          x1='0%'
+          y1='0%'
+          x2='100%'
+          y2='100%'
         >
-          <stop offset="0" className="gradient2" />
-          <stop offset=".5" className="gradient1" />
-          <stop offset="1" className="gradient2" />
+          <stop offset='0' className='gradient2' />
+          <stop offset='.5' className='gradient1' />
+          <stop offset='1' className='gradient2' />
         </linearGradient>
       </defs>
       <path

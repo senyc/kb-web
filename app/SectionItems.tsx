@@ -1,7 +1,7 @@
-import ShowTextItem from "./ShowTextItem"
+import ShowTextItem from './ShowTextItem';
 
 interface SectionItemsProps {
-  currentSection: string
+  currentSection: string;
 }
 export default function SectionItems({ currentSection }: SectionItemsProps) {
   return (
@@ -39,8 +39,8 @@ export default function SectionItems({ currentSection }: SectionItemsProps) {
             title='This site'
           />
         </>
-        ) : <> </>
+      ) : <> </>
       }
     </ul>
-  )
+  );
 }

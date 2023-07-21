@@ -1,4 +1,4 @@
-import StyledLine from "./ColoredLine";
+import StyledLine from './ColoredLine';
 
 export default function Bio() {
   return (

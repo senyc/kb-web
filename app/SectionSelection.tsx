@@ -1,10 +1,12 @@
-import { useState } from "react";
-import OptionButton from "./OptionButton";
+import { Dispatch, SetStateAction, useState } from 'react';
+
+import OptionButton from './OptionButton';
 
 interface SectionSelectionProps {
-  setCurrentSection: any;
+  setCurrentSection: Dispatch<SetStateAction<string>>;
   currentSection: string;
 }
+
 export default function SectionSelection({ setCurrentSection, currentSection }: SectionSelectionProps) {
   const [fallBackSection, setFallBackSection] = useState(currentSection)
 
