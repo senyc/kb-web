@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --grad-one: green;
+  --grad-two: blue;
+}
+
+.custom-gradient1 {
+  /* Replace with your desired colors */
+  background-image: linear-gradient(to bottom right, #ff0000, #0000ff);
+}
+
+.custom-gradient2 {
+  /* Replace with your desired colors */
+  background-image: linear-gradient(to bottom right, #00ff00, #ffff00);
+}
+
+.custom-fill {
+  fill: url(#grad2);
+} 
+
+.gradient1 {
+  stop-color: var(--grad-one);
+}
+
+.gradient2 {
+  stop-color: var(--grad-two);
+}
+
+.bgone {
+  background: var(--grad-one);
+}
+
+.bgtwo {
+  background: var(--grad-two);
+}
+
+.styled-line {
+  background: linear-gradient(0deg, var(--grad-two) 0%, var(--grad-one)50%, var(--grad-one) 100%);
+}
+
+.styled-vertical-line {
+  background: linear-gradient(90deg, var(--grad-two) 0%, var(--grad-one)50%, var(--grad-one) 100%);
+}
+
+.top-left-border {
+  content: " ";
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg,var(--grad-two)0%,var(--grad-one)50%,var(--grad-two)100%);
+  border-top-left-radius: 8px;
+  transition: all .3s ease-in-out;
+  position: absolute;
+  top: -2px;
+  bottom: 0;
+  left: -2px;
+
+}
+
+.show-border {
+  border-top-left-radius: 7px;
+}
