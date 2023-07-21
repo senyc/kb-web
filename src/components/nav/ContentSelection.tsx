@@ -2,25 +2,27 @@
 
 import { useState } from 'react';
 
+import { Section } from '@annotations'
+
 import SectionButton from './SectionButton';
 import SectionItems from './SectionItems';
 import SectionSelection from './SectionSelection';
 import SmallTopRightBorder from './SmallTopRightBorder';
 
 export default function ContentSelection() {
-  const [currentSection, setCurrentSection] = useState('development')
-  const sectionOrder: Record<string, string> = {
-    'development': 'experience',
-    'experience': 'projects',
-    'projects': 'development'
-  }
+  const [currentSection, setCurrentSection] = useState<Section>('Development');
+  const sectionOrder: Record<Section, Section> = {
+    'Development': 'Experience',
+    'Experience': 'Projects',
+    'Projects': 'Development'
+  };
 
   const onClick = () => {
-    setCurrentSection(sectionOrder[currentSection])
-  }
+    setCurrentSection(sectionOrder[currentSection]);
+  };
   return (
-    <div className='xl:pt-96 pt-0 xl:ml-0  pl-8 md:place-self-center xl:place-self-start flex-grow flex flex-col gap-y-12'>
-      <div className='pr-5 flex flex-row gap-x-5'>
+    <div className='flex flex-grow flex-col gap-y-12 place-self-center pl-8 pt-0 xl:ml-0'>
+      <div className='flex flex-row gap-x-5 pr-5'>
         <SectionButton
           title={currentSection}
           onClick={onClick}
@@ -30,7 +32,7 @@ export default function ContentSelection() {
           setCurrentSection={setCurrentSection}
         />
       </div>
-      <div className='relative flex flex-col ml-6 mt-0 '>
+      <div className='relative ml-6 mt-0 flex flex-col'>
         <SmallTopRightBorder
         />
         <SectionItems
@@ -38,5 +40,5 @@ export default function ContentSelection() {
         />
       </div>
     </div>
-  )
+  );
 }

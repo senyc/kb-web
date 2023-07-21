@@ -1,12 +1,14 @@
+import { Section } from '@annotations';
 import ShowTextItem from './ShowTextItem';
 
 interface SectionItemsProps {
-  currentSection: string;
+  currentSection: Section;
 }
+
 export default function SectionItems({ currentSection }: SectionItemsProps) {
   return (
-    <ul className='z-0 pt-4 pl-4 bg-dark show-border'>
-      {currentSection === 'development' ? (
+    <ul className='bg-dark show-border z-0 h-48 min-h-full pl-4 pt-4'>
+      {currentSection === 'Development' ? (
         <>
           <ShowTextItem
             title='Distro'
@@ -18,7 +20,7 @@ export default function SectionItems({ currentSection }: SectionItemsProps) {
             title='Languages'
           />
         </>
-      ) : currentSection === 'experience' ? (
+      ) : currentSection === 'Experience' ? (
         <>
           <ShowTextItem
             title='Full-stack Internship'
@@ -30,7 +32,7 @@ export default function SectionItems({ currentSection }: SectionItemsProps) {
             title='Python Chat bot'
           />
         </>
-      ) : currentSection === 'projects' ? (
+      ) : currentSection === 'Projects' ? (
         <>
           <ShowTextItem
             title='typetest-cli'
@@ -39,8 +41,9 @@ export default function SectionItems({ currentSection }: SectionItemsProps) {
             title='This site'
           />
         </>
-      ) : <> </>
-      }
+      ) : (
+        <> </>
+      )}
     </ul>
   );
 }

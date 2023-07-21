@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: 'Kyler Bomhof',
   description: 'My website',
   keywords: ['Kyler Bomhof', 'senyc']
-}
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-dark text-text tracking-wide h-screen w-screen flex flex-row items-center justify-center`}>
+      <body className={`${inter.className} bg-dark text-text tracking-wide w-screen flex flex-row items-center h-screen justify-center`}>
         {children}
       </body>
     </html>

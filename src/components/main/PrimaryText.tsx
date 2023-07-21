@@ -1,9 +1,9 @@
-import StyledLine from './ColoredLine';
+import ColoredLine from './ColoredLine';
 
-export default function Bio() {
+export default function PrimaryText() {
   return (
     <>
-      <h2 className='text-5xl font-bold mb-8'>
+      <h2 className='mb-8 text-5xl font-bold'>
         Kyler Bomhof
       </h2>
       <div className='relative max-w-xl'>
@@ -12,9 +12,9 @@ export default function Bio() {
         </p>
         <p className='mb-5 font-medium'>
           {"I'm passionate about software architecture and building applications such that they are not just great today, but tomorrow as well."}
-        </p >
-        <StyledLine />
+        </p>
+        <ColoredLine />
       </div>
     </>
-  )
+  );
 }

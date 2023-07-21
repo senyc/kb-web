@@ -6,7 +6,7 @@ interface SectionButtonProps {
 export default function SectionButton({ title, onClick }: SectionButtonProps) {
   return (
     <button 
-      className=" w-56 hover:scale-105 font-thin text-4xl"
+      className='w-56 hover:scale-105 font-thin text-4xl'
       onClick={onClick}
     >
       {title}

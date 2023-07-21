@@ -1,16 +1,17 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 
+import { Section } from '@annotations'
 import OptionButton from './OptionButton';
 
 interface SectionSelectionProps {
-  setCurrentSection: Dispatch<SetStateAction<string>>;
-  currentSection: string;
+  setCurrentSection: Dispatch<SetStateAction<Section>>;
+  currentSection: Section;
 }
 
 export default function SectionSelection({ setCurrentSection, currentSection }: SectionSelectionProps) {
-  const [fallBackSection, setFallBackSection] = useState(currentSection)
+  const [fallBackSection, setFallBackSection] = useState<Section>(currentSection)
 
-  const onClick = (newSection: string) => {
+  const onClick = (newSection: Section) => {
     setFallBackSection(newSection)
   }
 
@@ -18,19 +19,19 @@ export default function SectionSelection({ setCurrentSection, currentSection }: 
     setCurrentSection(fallBackSection)
   }
 
-  const onMouseOver = (newSection: string) => {
+  const onMouseOver = (newSection: Section) => {
     setFallBackSection(currentSection)
     setCurrentSection(newSection)
   }
 
   return (
     <>
-      <div className='flex flex-col gap-y-1 justify-end'>
+      <div className='flex flex-col justify-end gap-y-1'>
         <OptionButton
           onClick={onClick}
           onMouseLeave={onMouseLeave}
           onMouseOver={onMouseOver}
-          controllingSection='development'
+          controllingSection='Development'
           color='one'
           currentSection={currentSection}
         />
@@ -39,7 +40,7 @@ export default function SectionSelection({ setCurrentSection, currentSection }: 
           onMouseLeave={onMouseLeave}
           onMouseOver={onMouseOver}
           color='two'
-          controllingSection='experience'
+          controllingSection='Experience'
           currentSection={currentSection}
         />
         <OptionButton
@@ -47,7 +48,7 @@ export default function SectionSelection({ setCurrentSection, currentSection }: 
           onMouseLeave={onMouseLeave}
           onMouseOver={onMouseOver}
           color='one'
-          controllingSection='projects'
+          controllingSection='Projects'
           currentSection={currentSection}
           
         />
