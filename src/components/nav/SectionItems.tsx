@@ -1,43 +1,49 @@
-import { Section } from '@annotations';
+import { Section, TextEntry } from '@annotations';
 import ShowTextItem from './ShowTextItem';
+import { Dispatch, SetStateAction } from 'react';
 
 interface SectionItemsProps {
   currentSection: Section;
+  displayedTextDispatch: (newState: TextEntry) => void;
 }
 
-export default function SectionItems({ currentSection }: SectionItemsProps) {
+export default function SectionItems({ currentSection, displayedTextDispatch }: SectionItemsProps) {
   return (
     <ul className='bg-dark show-border z-0 h-48 min-h-full pl-4 pt-4'>
       {currentSection === 'Development' ? (
         <>
           <ShowTextItem
+            onClick={() => displayedTextDispatch(TextEntry.Distro)}
             title='Distro'
           />
           <ShowTextItem
+            onClick={() => displayedTextDispatch(TextEntry.Editor)}
             title='Editor'
           />
           <ShowTextItem
+            onClick={() => displayedTextDispatch(TextEntry.Languages)}
             title='Languages'
           />
         </>
       ) : currentSection === 'Experience' ? (
         <>
           <ShowTextItem
+            onClick={() => displayedTextDispatch(TextEntry.InternshipTwo)}
             title='Full-stack Internship'
           />
           <ShowTextItem
+            onClick={() => displayedTextDispatch(TextEntry.InternshipOne)}
             title='IT Internship'
-          />
-          <ShowTextItem
-            title='Python Chat bot'
           />
         </>
       ) : currentSection === 'Projects' ? (
         <>
           <ShowTextItem
+            onClick={() => displayedTextDispatch(TextEntry.Typetest)}
             title='typetest-cli'
           />
           <ShowTextItem
+            onClick={() => displayedTextDispatch(TextEntry.Site)}
             title='This site'
           />
         </>

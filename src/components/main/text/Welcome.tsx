@@ -1,6 +1,6 @@
-import ColoredLine from './ColoredLine';
+import ColoredLine from '../ColoredLine';
 
-export default function PrimaryText() {
+export default function Welcome() {
   return (
     <>
       <h2 className='mb-8 text-5xl font-bold'>
@@ -17,4 +17,5 @@ export default function PrimaryText() {
       </div>
     </>
   );
+
 }
