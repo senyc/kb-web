@@ -1,6 +1,5 @@
 import { Section, TextEntry } from '@annotations';
 import ShowTextItem from './ShowTextItem';
-import { Dispatch, SetStateAction } from 'react';
 
 interface SectionItemsProps {
   currentSection: Section;
@@ -9,7 +8,7 @@ interface SectionItemsProps {
 
 export default function SectionItems({ currentSection, displayedTextDispatch }: SectionItemsProps) {
   return (
-    <ul className='bg-dark show-border z-0 h-48 min-h-full pl-4 pt-4'>
+    <ul className='bg-dark show-border z-0 h-32 min-h-full max-w-xs pl-4  pt-4'>
       {currentSection === 'Development' ? (
         <>
           <ShowTextItem

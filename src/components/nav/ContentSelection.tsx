@@ -24,15 +24,15 @@ export default function ContentSelection({ displayedTextDispatch }: ContentSelec
   };
 
   return (
-    <div className='flex flex-grow flex-col gap-y-12 place-self-center pl-8 pt-0 xl:ml-0'>
-      <div className='flex flex-row gap-x-5 pr-5'>
-        <SectionButton
-          title={currentSection}
-          onClick={onClick}
-        />
+    <div className='mb-24 ml-9 flex flex-grow flex-col gap-y-12 sm:ml-0 sm:self-center xl:mb-0 '>
+      <div className='flex w-52 flex-row gap-x-2'>
         <SectionSelection
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
+        />
+        <SectionButton
+          title={currentSection}
+          onClick={onClick}
         />
       </div>
       <div className='relative ml-6 mt-0 flex flex-col'>

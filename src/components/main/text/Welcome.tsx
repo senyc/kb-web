@@ -3,10 +3,10 @@ import ColoredLine from '../ColoredLine';
 export default function Welcome() {
   return (
     <>
-      <h2 className='mb-8 text-5xl font-bold'>
+      <h2 className='mb-5 text-4xl font-bold sm:text-5xl'>
         Kyler Bomhof
       </h2>
-      <div className='relative max-w-xl'>
+      <div className='relative ml-5 mr-5 max-w-xl font-medium'>
         <p className='mb-5 font-medium '>
           {"Hi, I'm a full stack engineer, with professional experience building web applications."}
         </p>

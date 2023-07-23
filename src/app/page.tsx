@@ -2,12 +2,13 @@
 
 import { useReducer } from 'react';
 
+import { TextEntry } from '@annotations';
+
 import BottomRightCorner from '@components/wrapper/BottomRightCorner';
 import ContentSelection from '@components/nav/ContentSelection';
 import ExternalLinks from '@components/wrapper/ExternalLinks';
 import PrimaryDisplay from '@components/main/PrimaryDisplay';
 import TopLeftCorner from '@components/wrapper/TopLeftCorner';
-import { TextEntry } from '@annotations';
 
 /**
 * Upon double click will display the welcome text

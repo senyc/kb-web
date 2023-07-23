@@ -3,7 +3,7 @@ import ColoredLine from '../ColoredLine';
 export default function Typetest() {
   return (
     <>
-      <h1 className=' mb-1 text-5xl font-semibold'>
+      <h1 className='mb-4 text-4xl font-semibold sm:text-5xl'>
         {"typetest"}
       </h1>
       <div className='relative ml-5 mr-5 flex max-w-xl  font-medium'>

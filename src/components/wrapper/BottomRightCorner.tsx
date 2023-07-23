@@ -6,7 +6,7 @@ interface BottomRightCornerProps {
 const BottomRightCorner = ({ height, width }: BottomRightCornerProps) => {
   return (
     <svg
-      className='absolute bottom-0 right-0'
+      className='invisible absolute bottom-0 right-0 z-10 md:visible'
       width={width}
       height={height}
     >

@@ -3,7 +3,7 @@ import ColoredLine from '../ColoredLine';
 export default function Languages() {
   return (
     <>
-      <h2 className='mb-8 text-5xl font-semibold'>
+      <h2 className='mb-4 text-4xl font-semibold sm:text-5xl'>
         {"Languages"}
       </h2>
       <div className='relative ml-5 mr-5 flex max-w-xl  font-medium'>

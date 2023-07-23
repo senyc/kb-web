@@ -26,7 +26,7 @@ export default function SectionSelection({ setCurrentSection, currentSection }: 
 
   return (
     <>
-      <div className='flex flex-col justify-end gap-y-1'>
+      <div className='flex flex-col justify-start gap-y-1'>
         <OptionButton
           onClick={onClick}
           onMouseLeave={onMouseLeave}

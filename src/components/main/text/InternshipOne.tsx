@@ -3,13 +3,13 @@ import ColoredLine from "../ColoredLine";
 export default function InternshipOne() {
   return (
     <>
-      <h1 className=' mb-1 text-5xl font-semibold'>
+      <h1 className='mb-4 text-4xl font-semibold sm:text-5xl'>
         {"IT Internship"}
       </h1>
       <p className='mb-3 italic'>
         May 2022 - May 2023
       </p>
-      <div className='relative ml-5 mr-5 flex max-w-xl  font-medium'>
+      <div className='relative ml-5 mr-5 flex max-w-xl font-medium'>
         <div>
           <p className='mb-4'>
             {"I had the good fortune to work on the Client Engineering team at Haworth full time from May to August 2022, then remote until May of 2023 I worked part time."}

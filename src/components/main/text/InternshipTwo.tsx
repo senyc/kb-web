@@ -3,7 +3,7 @@ import ColoredLine from '../ColoredLine';
 export default function InternshipTwo() {
   return (
     <>
-      <h1 className=' mb-1 text-5xl font-semibold'>
+      <h1 className='mb-4 text-4xl font-semibold sm:text-5xl'>
         {"Full-stack Internship"}
       </h1>
       <p className='mb-3 italic'>

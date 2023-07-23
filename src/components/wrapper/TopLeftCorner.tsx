@@ -7,7 +7,7 @@ interface TopLeftCornerProps {
 const TopLeftCorner = ({ height, width, thickness = 20 }: TopLeftCornerProps) => {
   return (
     <svg
-      className='absolute left-0 top-0'
+      className='invisible absolute left-0 top-0 z-10 sm:visible'
       width={width}
       height={height}
     >
