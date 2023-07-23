@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 import { Section, TextEntry } from '@annotations';
