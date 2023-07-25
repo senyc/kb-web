@@ -15,7 +15,7 @@ interface PrimaryDisplayProps {
 
 export default function PrimaryDisplay({ textDisplay }: PrimaryDisplayProps) {
   return (
-    <div className='ml-11 mt-32 basis-7/12 self-center sm:mt-64 md:ml-32 xl:mt-0'>
+    <div className='mb-11 ml-11 mt-32 basis-7/12 self-center sm:mb-0 sm:mt-64 md:ml-32 xl:mt-0'>
       {
         (() => {
           switch (textDisplay) {
