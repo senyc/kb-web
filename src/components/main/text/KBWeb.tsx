@@ -9,10 +9,10 @@ export default function KBWeb() {
       <div className='relative ml-5 mr-5 flex max-w-xl  font-medium'>
         <div>
           <p className='mb-4'>
-            {"This site is built with Vercel's NextJS framework and styled using tailwindcss, it is also deployed via Vercel's deployment service."}
+            {"This site is built with Vercel's Next.js framework and styled using Tailwind CSS. It is currently deployed with Vercel."}
           </p>
           <p className='mb-4'>
-            {"During this process I got to delve into mobile-first design. Most of my previous react experience has been for desktop web-apps so this was a fun change of pace."}
+            {"During this process, I got to delve into mobile-first design. Most of my previous React experience has been focused on desktop web apps, so this was a fun change of pace."}
           </p>
           <p className='mb-4'>
             {"The source code for this can be found on my GitHub "}

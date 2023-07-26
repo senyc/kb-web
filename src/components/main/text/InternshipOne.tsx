@@ -12,13 +12,13 @@ export default function InternshipOne() {
       <div className='relative ml-5 mr-5 flex max-w-xl font-medium'>
         <div>
           <p className='mb-4'>
-            {"I had the good fortune to work on the Client Engineering team at Haworth full time from May to August 2022, then remote until May of 2023 I worked part time."}
+            {"I had the good fortune to work full-time on the Client Engineering team at Haworth from May to August 2022, and then continued remotely until May 2023, working part-time."}
           </p>
           <p className='mb-4'>
-            {"While in this position I worked with the Information Security team to roll out new security software across the organization. I utilized various system administration tools like Microsoft Endpoint and Configuration Manager to deploy application fixes to devices company-wide (in surplus of 7,000)"}
+            {"While in this position I worked with the Information Security team to roll out new security software across the organization. I also employed tools such as Microsoft Endpoint and Configuration Manager to efficiently deploy application fixes to over 7,000 devices company-wide."}
           </p>
           <p className='mb-4'>
-            {"During this experience I got to work with Powershell, Endpoint, SharePoint, Microsoft's power platform, Azure AD, Git, and others."}
+            {"During this experience I was able to work with Powershell, Endpoint, SharePoint, Microsoft's power platform, Azure AD, Git, and others."}
           </p>
         </div>
         <ColoredLine />

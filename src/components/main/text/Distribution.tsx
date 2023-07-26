@@ -11,10 +11,10 @@ export default function Distribution() {
       <div className='relative ml-5 mr-5 flex max-w-xl  font-medium'>
         <div className='max-h-48'>
           <p className='mb-4'>
-            {"Currently I daily drive Arch Linux. I've used Ubuntu, and Pop_OS! in the past, but Arch has been my favorite."}
+            {"I currently use Arch Linux as my daily driver. While I've used Ubuntu and Pop_OS! in the past, Arch has been my favorite."}
           </p>
           <p>
-            {"If you would like to see my dotfiles, those can be found "}
+            {"My up-to-date dotfiles can be found "}
             <a href="https://github.com/senyc/.dotfiles" target='_blank' className='underline'>
               here
             </a>

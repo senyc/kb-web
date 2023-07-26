@@ -13,10 +13,10 @@ export default function Editor() {
             <a href="https://github.com/neovim/neovim" target='_blank' className='underline'>
               {"Neovim"}
             </a>
-            {". I have also used native Vim, VI, and bit of nano. I previously daily drove VS Code. I have a little bit of experience with the IntelliJ suite as well."}
+            {". I have also used native Vim, VI, and bit of nano. Previously, I used VS Code as my daily driver, and I also have some experience with the IntelliJ suite."}
           </p>
           <p >
-            {"I typically just build from Nvim's stable branch. If you would like to take a look at my config you can find that "}
+            {"I typically build from Nvim's stable branch. my current config can be found "}
             <a href="https://github.com/senyc/.dotfiles" target='_blank' className='underline'>
               here
             </a>
