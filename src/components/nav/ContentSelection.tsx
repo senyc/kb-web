@@ -24,7 +24,7 @@ export default function ContentSelection({ displayedTextDispatch }: ContentSelec
   };
 
   return (
-    <div className='mb-24 ml-9 flex flex-grow flex-col gap-y-12 sm:ml-0 sm:self-center xl:mb-0 '>
+    <div className='mb-24 ml-9 flex min-w-fit flex-grow flex-col gap-y-12 self-center sm:ml-0 xl:mb-0 '>
       <div className='flex w-52 flex-row gap-x-2'>
         <SectionSelection
           currentSection={currentSection}
