@@ -13,7 +13,7 @@ export default function Editor() {
             <a href="https://github.com/neovim/neovim" target='_blank' className='underline'>
               {"Neovim"}
             </a>
-            {". I have also used native Vim, VI, and bit of nano. Previously, I used VS Code as my daily driver, and I also have some experience with the IntelliJ suite."}
+            {". I have also used native Vim, VI, and bit of nano. Previously, I used VS Code as my daily driver, and I also have some experience with the JetBrains suite of tools."}
           </p>
           <p >
             {"I typically build from Nvim's stable branch. my current config can be found "}
