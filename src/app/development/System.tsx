@@ -8,7 +8,7 @@ export default function System() {
           [
             { heading: 'Linux', experienceWith: '3 Years' },
             { heading: 'Tmux', experienceWith: '1 Years' },
-            { heading: 'Vim (neovim)', experienceWith: '1 Year' },
+            { heading: 'Vim (Neovim)', experienceWith: '1 Year' },
             { heading: 'VS Code', experienceWith: '3 Years' },
             { heading: 'Bash Scripting', experienceWith: '3 Years' },
             { heading: 'AWK', experienceWith: '6 months' },
