@@ -1,7 +1,7 @@
 export default function LinkedIn() {
   return (
     <a
-      className='hover:scale-105'
+      className='duration-150 ease-in hover:scale-110'
       href='https://www.linkedin.com/in/kyler-bomhof/'
       target='_blank'
       rel='me'

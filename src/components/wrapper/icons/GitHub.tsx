@@ -1,7 +1,7 @@
 export default function Github() {
   return (
     <a
-      className='hover:scale-105'
+      className='duration-150 ease-in hover:scale-110'
       href='https://github.com/senyc'
       target='_blank'
       rel='me'
