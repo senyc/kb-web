@@ -14,57 +14,16 @@ export default function Development() {
     <main>
       <ArrowTab
         tabs={availableTabs}
-        tabContent={
-          [
-            <div 
-              className='slide-in-from-left'
-              key={'1'}
-            >
-            <Style />
-            </div>,
-            <div 
-              className='slide-in-from-left'
-              key={'2'}
-            >
-            <Frontend />
-            </div>,
-            <div 
-              key={'3'}
-              className='slide-in-from-left'>
-            <Backend />
-            </div>,
-            <div 
-              className='slide-in-from-left'
-              key={'4'}
-            >
-            <Deploy />
-            </div>,
-            <div 
-              className='slide-in-from-left'
-              key={'5'}
-            >
-            <System />
-            </div>,
-            <div 
-              className='slide-in-from-left'
-              key={'6'}
-            >
-            <VersionControl />
-            </div>,
-            <div 
-              className='slide-in-from-left'
-              key={'7'}
-            >
-            <Design />
-            </div>,
-            <div 
-              className='slide-in-from-left'
-              key={'8'}
-            >
-            <Testing />
-            </div>,
-          ]
-        }
+        tabContent={[
+          <Style />,
+          <Frontend />,
+          <Backend />,
+          <Deploy />,
+          <System />,
+          <VersionControl />,
+          <Design />,
+          <Testing />,
+        ]}
       />
     </main>
   );
