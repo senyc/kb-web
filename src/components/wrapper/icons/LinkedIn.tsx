@@ -4,7 +4,8 @@ export default function LinkedIn() {
       className='duration-150 ease-in hover:scale-110'
       href='https://www.linkedin.com/in/kyler-bomhof/'
       target='_blank'
-      rel='me'
+      rel='me noreferrer'
+      aria-label='LinkedIn Profile'
       title='Linkedin'>
       <svg
         xmlns='http://www.w3.org/2000/svg'

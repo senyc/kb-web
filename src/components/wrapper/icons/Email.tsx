@@ -4,7 +4,8 @@ export default function Email() {
       className='duration-150 ease-in hover:scale-110'
       href='mailto:kdbomhof@gmail.com'
       target='_blank'
-      rel='me'
+      rel='me noreferrer'
+      aria-label='Email'
       title='Email'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
