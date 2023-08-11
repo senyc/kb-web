@@ -1,48 +1,60 @@
-import { Button } from "@mui/material";
 import Link from "next/link";
-import WorkIcon from '@mui/icons-material/Work';
-import DescriptionIcon from '@mui/icons-material/Description';
-import CodeIcon from '@mui/icons-material/Code';
-import  Person  from "@mui/icons-material/Person";
-import { House } from "@mui/icons-material";
+import DarkModeButton from "./DarkModeButton";
+import HeaderLink from "./HeaderLink";
+
+function HomeButton() {
+  return (
+    <button className='  hover:scale-105'>
+      <Link href='/'>
+        <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="#a9a9b3" />
+          <text x="50" y="65" textAnchor="middle" fill="black" fontSize="55" fontFamily="mono">
+            KB
+          </text>
+        </svg>
+      </Link >
+    </button>
+  );
+};
+
 export default function HeaderNavigation() {
   return (
-    <ul className='flex w-screen flex-row justify-center'>
-      <li>
-        <Link href='/'>
-          <Button startIcon={<House />}>
-            {'Home'}
-          </Button>
-        </Link>
-      </li>
-      <li>
-        <Link href='experience'>
-          <Button startIcon={<WorkIcon />}>
-            {'Experience'}
-          </Button>
-        </Link>
-      </li>
-      <li>
-        <Link href='development'>
-          <Button startIcon={<CodeIcon />}>
-            {'Development'}
-          </Button>
-        </Link>
-      </li>
-      <li>
-        <Link href='about'>
-          <Button startIcon={<Person />}>
-            {'About Me'}
-          </Button>
-        </Link>
-      </li>
-      <li>
-        <Link href='BomhofKylerResume.pdf'>
-          <Button startIcon={<DescriptionIcon />}>
-            {'Resume'}
-          </Button>
-        </Link>
-      </li>
-    </ul>
+    <div className='flex h-16 w-screen flex-row items-center justify-center'>
+      <HomeButton />
+      <div className=' flex w-full max-w-2xl flex-row justify-end'>
+        <nav className='border-r-2 border-gray-600 pr-4'>
+          <ul className='flex flex-row gap-4'>
+            <li className=''>
+              <HeaderLink
+                href='BomhofKylerResume.pdf'
+                label='Resume'
+              />
+            </li>
+            <li>
+              <HeaderLink
+                href='experience'
+                label='Experience'
+              />
+            </li>
+            <li>
+              <HeaderLink
+                href='development'
+                label='Development'
+              />
+            </li>
+            <li>
+              <HeaderLink
+                href='about'
+                label='About'
+              />
+            </li>
+          </ul>
+        </nav>
+        <div className='pl-4'>
+          <DarkModeButton />
+        </div>
+
+      </div>
+    </div>
   );
 }
