@@ -59,27 +59,37 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
           <LeftTabArrow
             onClick={nextTab}
           />
-            <Tabs
+          <Tabs
+            value={currentTab}
+            onChange={handleChange}
+            textColor="primary"
+            indicatorColor="primary"
+          >
+            <Tab
+              label={tabs[(currentTab - 1 + tabs.length) % tabs.length]}
+              value={(currentTab - 1 + tabs.length) % tabs.length}
+              className='text-text'
+              sx={{
+                ".Mui-selected": {
+                  color: '#a9a9b3',
+                }
+              }}
+            />
+            <Tab
+              label={tabs[currentTab]}
               value={currentTab}
-              onChange={handleChange}
-              textColor="primary"
-              indicatorColor="primary"
-            >
-              <Tab
-                label={tabs[(currentTab - 1 + tabs.length) % tabs.length]}
-                value={(currentTab - 1 + tabs.length) % tabs.length}
-                className='text-gray-400'
-              />
-              <Tab
-                label={tabs[currentTab]}
-                value={currentTab}
-              />
-              <Tab
-                label={tabs[(currentTab + 1) % tabs.length]}
-                value={(currentTab + 1) % tabs.length}
-                className='text-gray-400'
-              />
-            </Tabs>
+            />
+            <Tab
+              label={tabs[(currentTab + 1) % tabs.length]}
+              value={(currentTab + 1) % tabs.length}
+              className='text-text'
+              sx={{
+                ".Mui-selected": {
+                  color: '#a9a9b3',
+                }
+              }}
+            />
+          </Tabs>
           <RightTabArrow
             onClick={prevTab}
           />
