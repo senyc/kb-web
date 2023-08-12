@@ -6,7 +6,7 @@ export default function HomeButton() {
       <Link href='/'>
         <svg width='30' height='30' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
           <circle cx='50' cy='50' r='45' fill='#a9a9b3' />
-          <text x='50' y='65' textAnchor='middle' fill='black' fontSize='55' fontFamily='mono'>
+          <text x='50' y='70' textAnchor='middle' fill='black' fontSize='55' fontFamily='mono'>
             KB
           </text>
         </svg>
