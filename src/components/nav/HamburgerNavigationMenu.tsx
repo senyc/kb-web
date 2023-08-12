@@ -1,10 +1,12 @@
 'use client';
+
 import { MouseEvent, useState } from 'react';
 
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+
 import HeaderLink from './HeaderLink';
 
 export default function HamburgerNavigationMenu() {
@@ -13,21 +15,22 @@ export default function HamburgerNavigationMenu() {
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
 
   return (
     <>
-      <IconButton
+      <button
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        className='text-text'
+        className='text-text duration-150 ease-in hover:scale-110'
       >
         <MenuIcon />
-      </IconButton>
+      </button>
       <Menu
         sx={{ mt: "1px", "& .MuiMenu-paper": { backgroundColor: "#252627", } }}
         id="basic-menu"

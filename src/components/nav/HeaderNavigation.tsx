@@ -8,7 +8,7 @@ export default function HeaderNavigation() {
     <div className='flex h-16 w-screen flex-row items-center justify-center'>
       <HomeButton />
       <div className='flex w-full max-w-2xl flex-row justify-end'>
-        <nav className=''>
+        <nav>
           <ul className='hidden flex-row gap-4 sm:flex'>
             <li>
               <HeaderLink
@@ -37,7 +37,7 @@ export default function HeaderNavigation() {
             </li>
           </ul>
           <div className='block sm:hidden'>
-          <HamburgerNavigationMenu />
+            <HamburgerNavigationMenu />
           </div>
         </nav>
         <div className='ml-4 border-l-2 border-l-gray-700 pl-4'>
