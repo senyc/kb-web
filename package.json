@@ -8,9 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "fix-snapshot": "jest -u"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/lab": "5.0.0-alpha.139",
+    "@mui/material": "^5.14.4",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",

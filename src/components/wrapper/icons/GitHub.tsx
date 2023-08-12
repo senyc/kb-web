@@ -1,11 +1,13 @@
 export default function Github() {
   return (
     <a
-      className='hover:scale-105'
+      className='duration-150 ease-in hover:scale-110'
       href='https://github.com/senyc'
       target='_blank'
-      rel='me'
-      title='GitHub'>
+      title='GitHub'
+      rel='me noreferrer'
+      aria-label='GitHub Profile'
+    >
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -22,5 +24,4 @@ export default function Github() {
       </svg>
     </a>
   );
-
 }

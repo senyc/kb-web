@@ -1,46 +1,19 @@
-'use client';
-
-import { useReducer } from 'react';
-
-import { TextEntry } from '@annotations';
-
-import BottomRightCorner from '@components/wrapper/BottomRightCorner';
-import ContentSelection from '@components/nav/ContentSelection';
-import ExternalLinks from '@components/wrapper/ExternalLinks';
-import PrimaryDisplay from '@components/main/PrimaryDisplay';
-import TopLeftCorner from '@components/wrapper/TopLeftCorner';
-
-/**
-* Upon double click will display the welcome text
-*/
-const reducer = (state: TextEntry, newState: TextEntry) => {
-  switch (newState) {
-    case state:
-      return TextEntry.Welcome;
-    default:
-      return newState;
-  }
-};
+import ExternalLinks from "@components/wrapper/ExternalLinks";
 
 export default function Index() {
-  const [displayedText, displayedTextDispatch] = useReducer(reducer, TextEntry.Welcome);
   return (
-    <div className='relative flex h-screen w-[1280px] grow flex-col xl:h-4/6 xl:min-w-max xl:grow-0 xl:flex-row'>
-      <ExternalLinks />
-      <PrimaryDisplay
-        textDisplay={displayedText}
-      />
-      <BottomRightCorner
-        height={300}
-        width={300}
-      />
-      <TopLeftCorner
-        height={300}
-        width={300}
-      />
-      <ContentSelection
-        displayedTextDispatch={displayedTextDispatch}
-      />
-    </div >
+    <main className='flex h-full w-full flex-row items-center justify-center overflow-hidden text-center'>
+      <div>
+        <h1 className='text-5xl font-bold'>
+          Kyler Bomhof
+        </h1>
+        <h2 className='mt-5 text-lg'>
+          Full-stack software developer
+        </h2>
+        <div className='mt-2 flex flex-row justify-center gap-6'>
+          <ExternalLinks />
+        </div>
+      </div>
+    </main>
   );
 }
