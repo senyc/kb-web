@@ -1,5 +1,6 @@
 import ArrowTab from "../ArrowTab";
 import Backend from "./Backend";
+import Database from "./Database";
 import Deploy from "./Deploy";
 import Design from "./Design";
 import Frontend from "./Frontend";
@@ -9,9 +10,9 @@ import Testing from "./Testing";
 import VersionControl from "./VersionControl";
 
 export default function Development() {
-  const availableTabs = ['Style', 'Frontend', 'Backend', 'Deploy', 'System', 'VC', 'Design', 'Testing'];
+  const availableTabs = ['Style', 'Frontend', 'Backend', 'Deploy', 'System', 'Database', 'VC', 'Testing', 'Design'];
   return (
-    <main>
+    <main className='w-screen'>
       <ArrowTab
         tabs={availableTabs}
         tabContent={[
@@ -20,9 +21,10 @@ export default function Development() {
           <Backend />,
           <Deploy />,
           <System />,
+          <Database />,
           <VersionControl />,
-          <Design />,
           <Testing />,
+          <Design />,
         ]}
       />
     </main>

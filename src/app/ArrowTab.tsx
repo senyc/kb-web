@@ -55,11 +55,10 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
   return (
     <>
       <div className='mt-8 flex flex-row justify-center'>
-        <div className='flex items-center space-x-4'>
+        <div className='flex w-11/12 items-center justify-center space-x-4'>
           <LeftTabArrow
             onClick={nextTab}
           />
-          <div className='w-64'>
             <Tabs
               value={currentTab}
               onChange={handleChange}
@@ -81,7 +80,6 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
                 className='text-gray-400'
               />
             </Tabs>
-          </div>
           <RightTabArrow
             onClick={prevTab}
           />

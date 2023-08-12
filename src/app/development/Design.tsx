@@ -7,7 +7,7 @@ export default function Design() {
         skills={
           [
             { heading: 'Figma', experienceWith: '2 Years' },
-            { heading: 'Lucid Chart', experienceWith: '1 Years' },
+            { heading: 'Lucid Chart', experienceWith: '1 Year' },
             { heading: 'ExcaliDraw', experienceWith: '1 Year' },
           ]}
       />

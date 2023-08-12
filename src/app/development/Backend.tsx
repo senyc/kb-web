@@ -7,13 +7,15 @@ export default function Backend() {
         skills={
           [
             { heading: 'Python', experienceWith: '3 Years' },
-            { heading: 'Go', experienceWith: '1 Year' },
             { heading: 'C', experienceWith: '3 Years' },
+            { heading: 'Lua', experienceWith: '1 Year' },
+            { heading: 'Node.js', experienceWith: '1 Year' },
+            { heading: 'Go', experienceWith: '6 months' },
+            { heading: 'Bash', experienceWith: '4 Years' },
             { heading: 'C++', experienceWith: '1 Year' },
             { heading: 'Java', experienceWith: '1 Year' },
-            { heading: 'Lua', experienceWith: '1 Year' },
-            { heading: 'Bash', experienceWith: '4 Years' },
-            { heading: 'Powershell', experienceWith: '1 Year' },
+            { heading: 'Ruby', experienceWith: '6 months' },
+            { heading: 'PowerShell', experienceWith: '1 Year' },
           ]}
       />
     </>
