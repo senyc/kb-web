@@ -1,15 +1,15 @@
 import DarkModeButton from './DarkModeButton';
+import HamburgerNavigationMenu from './HamburgerNavigationMenu';
 import HeaderLink from './HeaderLink';
 import HomeButton from './HomeButton';
-
 
 export default function HeaderNavigation() {
   return (
     <div className='flex h-16 w-screen flex-row items-center justify-center'>
       <HomeButton />
       <div className='flex w-full max-w-2xl flex-row justify-end'>
-        <nav className='border-r-2 border-gray-600 pr-4'>
-          <ul className='flex flex-row gap-4'>
+        <nav className=''>
+          <ul className='hidden flex-row gap-4 sm:flex'>
             <li>
               <HeaderLink
                 href='BomhofKylerResume.pdf'
@@ -36,11 +36,13 @@ export default function HeaderNavigation() {
               />
             </li>
           </ul>
+          <div className='block sm:hidden'>
+          <HamburgerNavigationMenu />
+          </div>
         </nav>
-        <div className='pl-4'>
+        <div className='ml-4 border-l-2 border-l-gray-700 pl-4'>
           <DarkModeButton />
         </div>
-
       </div>
     </div>
   );
