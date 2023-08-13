@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-dark text-text tracking-wide flex-col flex h-screen w-screen`}>
+      <body className={`${inter.className} bg-dark text-text tracking-wide flex-col flex w-full h-screen`}>
         <header className='bg-header'>
           <HeaderNavigation />
         </header>

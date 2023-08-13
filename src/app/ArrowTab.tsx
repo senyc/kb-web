@@ -53,46 +53,44 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
   };
 
   return (
-    <>
-      <div className='mt-8 flex flex-row justify-center'>
-        <div className='flex w-11/12 items-center justify-center space-x-4'>
-          <LeftTabArrow
-            onClick={nextTab}
+    <div className='w-11/12'>
+      <div className='mt-8 flex items-center justify-center space-x-4'>
+        <LeftTabArrow
+          onClick={nextTab}
+        />
+        <Tabs
+          value={currentTab}
+          onChange={handleChange}
+          textColor="primary"
+          indicatorColor="primary"
+        >
+          <Tab
+            label={tabs[(currentTab - 1 + tabs.length) % tabs.length]}
+            value={(currentTab - 1 + tabs.length) % tabs.length}
+            className='text-gray-400'
           />
-            <Tabs
-              value={currentTab}
-              onChange={handleChange}
-              textColor="primary"
-              indicatorColor="primary"
-            >
-              <Tab
-                label={tabs[(currentTab - 1 + tabs.length) % tabs.length]}
-                value={(currentTab - 1 + tabs.length) % tabs.length}
-                className='text-gray-400'
-              />
-              <Tab
-                label={tabs[currentTab]}
-                value={currentTab}
-              />
-              <Tab
-                label={tabs[(currentTab + 1) % tabs.length]}
-                value={(currentTab + 1) % tabs.length}
-                className='text-gray-400'
-              />
-            </Tabs>
-          <RightTabArrow
-            onClick={prevTab}
+          <Tab
+            label={tabs[currentTab]}
+            value={currentTab}
           />
-        </div>
-      </div >
-      <section className='mt-9 flex flex-row justify-center '>
+          <Tab
+            label={tabs[(currentTab + 1) % tabs.length]}
+            value={(currentTab + 1) % tabs.length}
+            className='text-gray-400'
+          />
+        </Tabs>
+        <RightTabArrow
+          onClick={prevTab}
+        />
+      </div>
+      <section className='mt-9 flex w-full min-w-fit flex-row justify-center'>
         <div
-          className={getAnimationClass(animationDirection)}
+          className={`${getAnimationClass(animationDirection)} grow max-w-sm`}
           key={currentTab}
         >
           {tabContent[currentTab]}
         </div>
       </section>
-    </>
+    </div>
   );
 }
