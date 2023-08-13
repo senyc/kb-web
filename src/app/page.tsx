@@ -2,7 +2,7 @@ import ExternalLinks from "@components/wrapper/ExternalLinks";
 
 export default function Index() {
   return (
-    <main className='flex h-full w-full flex-row items-center justify-center overflow-hidden text-center'>
+    <main className='flex h-full flex-row items-center justify-center text-center'>
       <div>
         <h1 className='text-5xl font-bold'>
           Kyler Bomhof

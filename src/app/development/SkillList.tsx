@@ -10,8 +10,7 @@ interface SkillListProps {
 
 export default function SkillList({ skills }: SkillListProps) {
   return (
-    <div className='flex w-screen flex-row justify-center'>
-      <ul className='flex w-11/12 min-w-fit max-w-sm flex-col'>
+      <ul className='flex w-full flex-col'>
         <li className='border-b-text mb-2 flex flex-row border-b-2 pb-1'>
           <h2 className='text-xl font-bold'>
             Tool/Language
@@ -33,6 +32,5 @@ export default function SkillList({ skills }: SkillListProps) {
           </div>
         ))}
       </ul>
-    </div>
   );
 }

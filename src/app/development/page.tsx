@@ -12,7 +12,7 @@ import VersionControl from "./VersionControl";
 export default function Development() {
   const availableTabs = ['Style', 'Frontend', 'Backend', 'Deploy', 'System', 'Database', 'VC', 'Testing', 'Design'];
   return (
-    <main className='w-screen'>
+    <main className='flex w-full flex-row justify-center'>
       <ArrowTab
         tabs={availableTabs}
         tabContent={[

@@ -26,8 +26,9 @@ module.exports = {
         dark: '#1D1D20',
         text: '#a9a9b3',
         header: '#252627'
-      }
-    },
+      },
+    }
   },
   plugins: [],
 };
+

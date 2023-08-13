@@ -5,7 +5,7 @@ import HomeButton from './HomeButton';
 
 export default function HeaderNavigation() {
   return (
-    <div className='flex h-16 w-screen flex-row items-center justify-center'>
+    <div className='flex h-16 w-full flex-row items-center justify-center'>
       <HomeButton />
       <div className='flex w-full max-w-2xl flex-row justify-end'>
         <nav>
