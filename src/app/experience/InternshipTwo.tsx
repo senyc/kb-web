@@ -19,7 +19,7 @@ export default function InternshipOne() {
           During my stay at <a className='underline' href='https://fortune.com/company/auto-owners-insurance/fortune500/'>Auto-Owners</a>, I worked on both ends of the stack, utilizing modern libraries, languages, and frameworks to  complete requirements on time, and with low tech debt.
         </p>
         <p className='mt-3'>
-          While following the Scrum framework, my team of business analysts, QA engineers, architects, and other developers were able to accomplish our goal of building tools to streamline labor-intensive maintence tasks performed by agents.
+          While following the Scrum framework, my team of business analysts, QA engineers, architects, and other developers were able to accomplish our goal of building tools to streamline labor-intensive maintenance tasks performed by agents.
         </p>
         <p className='mt-3'>
           After our project was implemented, agents were able to spend more time doing what they do best: signing new policies, and driving the business forward.
