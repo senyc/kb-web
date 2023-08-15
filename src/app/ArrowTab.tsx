@@ -1,10 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+
 import LeftTabArrow from './LeftTabArrow';
 import RightTabArrow from './RightTabArrow';
-import Tab from '@mui/material/Tab';
-import { Tabs } from '@mui/material';
 import { Direction } from 'src/lib/annotations/components';
 
 const getAnimationClass = (direction?: Direction) => {
@@ -47,7 +46,7 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
     setAnimationDirection(Direction.Right);
   };
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (newValue: number) => {
     setCurrentTab(newValue);
     setAnimationDirection(currentTab >= newValue ? Direction.Right : Direction.Left);
   };
@@ -58,18 +57,18 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
         <LeftTabArrow
           onClick={nextTab}
         />
-        <div className='tabs'>
+        <div className=' tabs'>
           <a
-            onClick={() => setCurrentTab((currentTab - 1 + tabs.length) % tabs.length)}
-            className='tab tab-bordered text-text'
+            onClick={() => handleChange((currentTab - 1 + tabs.length) % tabs.length)}
+            className='tab tab-bordered text-text w-24'
           >{tabs[(currentTab - 1 + tabs.length) % tabs.length]}</a>
           <a
-            className='tab tab-bordered text-text tab-active border-primary transition-all duration-150 ease-in '
-            onClick={() => setCurrentTab(currentTab)}
+            className='tab tab-bordered text-text tab-active border-primary w-24'
+            onClick={() => handleChange(currentTab)}
           >{tabs[currentTab]}</a>
           <a
-            onClick={() => setCurrentTab((currentTab + 1) % tabs.length)}
-            className='tab tab-bordered text-text'
+            onClick={() => handleChange((currentTab + 1) % tabs.length)}
+            className='tab tab-bordered text-text w-24'
           >{tabs[(currentTab + 1) % tabs.length]}
           </a>
         </div >
