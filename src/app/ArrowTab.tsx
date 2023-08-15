@@ -58,31 +58,23 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
         <LeftTabArrow
           onClick={nextTab}
         />
-        <Tabs
-          value={currentTab}
-          onChange={handleChange}
-          textColor="primary"
-          indicatorColor="primary"
-        >
-          <Tab
-            label={tabs[(currentTab - 1 + tabs.length) % tabs.length]}
-            value={(currentTab - 1 + tabs.length) % tabs.length}
-            className='text-gray-400'
-          />
-          <Tab
-            label={tabs[currentTab]}
-            value={currentTab}
-          />
-          <Tab
-            label={tabs[(currentTab + 1) % tabs.length]}
-            value={(currentTab + 1) % tabs.length}
-            className='text-gray-400'
-          />
-        </Tabs>
-        <RightTabArrow
-          onClick={prevTab}
-        />
-      </div>
+        <div className='tabs'>
+          <a
+            onClick={() => setCurrentTab((currentTab - 1 + tabs.length) % tabs.length)}
+            className='tab tab-bordered text-text'
+          >{tabs[(currentTab - 1 + tabs.length) % tabs.length]}</a>
+          <a
+            className='tab tab-bordered text-text tab-active border-primary transition-all duration-150 ease-in '
+            onClick={() => setCurrentTab(currentTab)}
+          >{tabs[currentTab]}</a>
+          <a
+            onClick={() => setCurrentTab((currentTab + 1) % tabs.length)}
+            className='tab tab-bordered text-text'
+          >{tabs[(currentTab + 1) % tabs.length]}
+          </a>
+        </div >
+        <RightTabArrow onClick={prevTab} />
+      </div >
       <section className='mt-9 flex w-full min-w-fit flex-row justify-center'>
         <div
           className={`${getAnimationClass(animationDirection)} grow max-w-sm`}
@@ -91,6 +83,6 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
           {tabContent[currentTab]}
         </div>
       </section>
-    </div>
+    </div >
   );
 }
