@@ -6,7 +6,7 @@ import TecnologiesUsed from './TechnologiesUsed';
 
 export default function InternshipOne() {
   return (
-    <section className='border-b-text w-11/12 max-w-3xl border-b-2 pb-4 pt-4'>
+    <section className='bg-dark border-b-text w-11/12 max-w-3xl border-b-2 pb-4 pt-4'>
       <h1 className='text-left text-2xl font-semibold sm:ml-3 sm:text-3xl'>
         Software Developer Internship
       </h1>

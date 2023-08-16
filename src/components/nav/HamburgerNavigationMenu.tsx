@@ -1,76 +1,62 @@
 'use client';
-
-import { MouseEvent, useState } from 'react';
-
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-
-import HeaderLink from './HeaderLink';
+import HeaderLink from "./HeaderLink";
+import OutsideClickHandler from 'react-outside-click-handler';
+/**
+* This can only be solved via event handlers not a controlled component 
+* via: https://github.com/facebook/react/issues/15486 
+*/
+const toggleOpen = () => {
+  document.getElementById('hamburger-menu')?.removeAttribute('open');
+};
 
 export default function HamburgerNavigationMenu() {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
-    <>
-      <button
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        className='text-text duration-150 ease-in hover:scale-110'
+    <OutsideClickHandler
+      onOutsideClick={toggleOpen}
+    >
+      <details id='hamburger-menu' className="dropdown"
       >
-        <MenuIcon />
-      </button>
-      <Menu
-        sx={{ mt: "1px", "& .MuiMenu-paper": { backgroundColor: "#252627", } }}
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>
-          <HeaderLink
-            href='BomhofKylerResume.pdf'
-            label='Resume'
-            openInNewTab={true}
-            className='text-text'
-          />
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <HeaderLink
-            href='experience'
-            label='Experience'
-            className='text-text'
-          />
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <HeaderLink
-            href='development'
-            className='text-text'
-            label='Development'
-          />
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <HeaderLink
-            href='about'
-            label='About'
-            className='text-text'
-          />
-        </MenuItem>
-      </Menu>
-    </>
+        <summary className="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </summary>
+        <ul
+          className=" menu menu-lg dropdown-content bg-header rounded-box -right-12 top-9 z-[1] mt-3 block p-2 shadow">
+          <li>
+            <HeaderLink
+              href={'BomhofKylerResume.pdf'}
+              label='Resume'
+              openInNewTab={true}
+              underline={false}
+              onClick={toggleOpen}
+            />
+          </li>
+          <li>
+            <HeaderLink
+              href='experience'
+              label='Experience'
+              underline={false}
+              onClick={toggleOpen}
+            />
+          </li>
+          <li>
+            <HeaderLink
+              href='development'
+              label='Development'
+              underline={false}
+              onClick={toggleOpen}
+            />
+          </li>
+          <li>
+            <HeaderLink
+              href='about'
+              label='About'
+              underline={false}
+              onClick={toggleOpen}
+            />
+          </li>
+        </ul>
+      </details >
+    </OutsideClickHandler>
   );
 }

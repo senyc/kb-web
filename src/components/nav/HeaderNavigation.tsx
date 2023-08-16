@@ -7,7 +7,7 @@ export default function HeaderNavigation() {
   return (
     <div className='flex h-16 w-full flex-row items-center justify-center'>
       <HomeButton />
-      <div className='flex w-full max-w-2xl flex-row justify-end'>
+      <div className='flex w-full max-w-2xl flex-row items-center justify-end'>
         <nav>
           <ul className='hidden flex-row gap-4 sm:flex'>
             <li>
@@ -40,9 +40,8 @@ export default function HeaderNavigation() {
             <HamburgerNavigationMenu />
           </div>
         </nav>
-        <div className='border-l-text ml-4 border-l-[1px] pl-4'>
-          <DarkModeButton />
-        </div>
+        <div className='border-r-text h-7 border-r-[1px] sm:ml-4' />
+        <DarkModeButton />
       </div>
     </div>
   );
