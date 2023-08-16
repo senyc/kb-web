@@ -2,20 +2,12 @@
 
 import { useState } from 'react';
 
-import LeftTabArrow from './LeftTabArrow';
-import RightTabArrow from './RightTabArrow';
 import { Direction } from 'src/lib/annotations/components';
 
-const getAnimationClass = (direction?: Direction) => {
-  switch (direction) {
-    case (Direction.Right):
-      return 'slide-in-from-right';
-    case (Direction.Left):
-      return 'slide-in-from-left';
-    default:
-      return '';
-  }
-};
+import LeftTabArrow from './LeftTabArrow';
+import RightTabArrow from './RightTabArrow';
+
+type Tab = 0 | 1 | 2;
 
 interface ArrowTabProps {
   /**
@@ -29,57 +21,88 @@ interface ArrowTabProps {
   tabContent: Array<JSX.Element>;
 }
 
-export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
-  const [currentTab, setCurrentTab] = useState<number>(0);
-  const [animationDirection, setAnimationDirection] = useState<Direction>();
+const getAnimationClass = (direction?: Direction) => {
+  switch (direction) {
+    case (Direction.Right):
+      return 'slide-in-from-right';
+    case (Direction.Left):
+      return 'slide-in-from-left';
+    default:
+      return '';
+  }
+};
 
-  const prevTab = () => {
-    setCurrentTab((currentTab) => (currentTab + 1) % tabs.length);
+const moveTabsRight = (tabIndexes: number[], lastTab: number) => {
+  return tabIndexes.map(tab => tab + 1 > lastTab ? 0 : tab + 1);
+};
+
+const moveTabsLeft = (tabIndexes: number[], lastTab: number) => {
+  return tabIndexes.map(tab => tab - 1 < 0 ? lastTab : tab - 1);
+};
+
+export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
+  const [currentTab, setCurrentTab] = useState<Tab>(1);
+  const [tabValues, setTabValues] = useState<number[]>([0, 1, 2]);
+  const [animationDirection, setAnimationDirection] = useState<Direction>(Direction.NoDirection);
+
+
+  const nextTab = () => {
+    currentTab < 2
+      ? setCurrentTab(currentTab => (currentTab + 1) as Tab)
+      : setTabValues(moveTabsRight(tabValues, tabs.length - 1));
     setAnimationDirection(Direction.Left);
   };
 
-  const nextTab = () => {
-    setCurrentTab((currentTab) => {
-      const newTab = (currentTab - 1) % tabs.length;
-      return newTab > 0 ? newTab : tabs.length - 1;
-    });
+  const prevTab = () => {
+    currentTab > 0
+      ? setCurrentTab(currentTab => (currentTab - 1) as Tab)
+      : setTabValues(moveTabsLeft(tabValues, tabs.length - 1));
     setAnimationDirection(Direction.Right);
   };
 
-  const handleChange = (newValue: number) => {
-    setCurrentTab(newValue);
-    setAnimationDirection(currentTab >= newValue ? Direction.Right : Direction.Left);
+  const handleChange = (newTab: Tab) => {
+    if (currentTab === newTab) {
+      setAnimationDirection(Direction.NoDirection);
+    } else {
+      setAnimationDirection(currentTab > newTab ? Direction.Right : Direction.Left);
+      setCurrentTab(newTab);
+    }
   };
 
   return (
     <div className='w-11/12'>
       <div className='mt-8 flex items-center justify-center space-x-4'>
         <LeftTabArrow
-          onClick={nextTab}
+          onClick={prevTab}
         />
         <div className=' tabs'>
           <a
-            onClick={() => handleChange((currentTab - 1 + tabs.length) % tabs.length)}
-            className='tab tab-bordered text-text w-24'
-          >{tabs[(currentTab - 1 + tabs.length) % tabs.length]}</a>
-          <a
-            className='tab tab-bordered text-text tab-active border-primary w-24'
-            onClick={() => handleChange(currentTab)}
-          >{tabs[currentTab]}</a>
-          <a
-            onClick={() => handleChange((currentTab + 1) % tabs.length)}
-            className='tab tab-bordered text-text w-24'
-          >{tabs[(currentTab + 1) % tabs.length]}
+            onClick={() => handleChange(0)}
+            className={`tab tab-bordered text-text ${currentTab == 0 && 'tab-active border-primary'} w-24`.replace('false', '')}
+          >
+            {tabs[tabValues[0]]}
           </a>
-        </div >
-        <RightTabArrow onClick={prevTab} />
+          <a
+            className={`tab tab-bordered text-text ${currentTab == 1 && 'tab-active border-primary'} w-24`.replace('false', '')}
+            onClick={() => handleChange(1)}
+          >
+            {tabs[tabValues[1]]}
+          </a>
+          <a
+            onClick={() => handleChange(2)}
+            className={`tab tab-bordered text-text ${currentTab == 2 && 'tab-active border-primary'} w-24`.replace('false', '')}
+          >
+            {tabs[tabValues[2]]}
+          </a>
+        </div>
+        <RightTabArrow onClick={nextTab} />
       </div >
       <section className='mt-9 flex w-full min-w-fit flex-row justify-center'>
         <div
           className={`${getAnimationClass(animationDirection)} grow max-w-sm`}
-          key={currentTab}
+          key={tabs[tabValues[currentTab]]}
         >
-          {tabContent[currentTab]}
+          {tabContent[tabValues[currentTab]]}
         </div>
       </section>
     </div >
