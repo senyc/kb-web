@@ -10,12 +10,12 @@ interface SkillListProps {
 
 export default function SkillList({ skills }: SkillListProps) {
   return (
-      <ul className='flex w-full flex-col'>
+      <ul className='flex flex-col'>
         <li className='border-b-text mb-2 flex flex-row border-b-2 pb-1'>
-          <h2 className='text-xl font-bold'>
+          <h2 className='font-bold sm:text-xl'>
             Tool/Language
           </h2>
-          <h3 className='grow text-right text-xl font-bold'>
+          <h3 className='grow text-right font-bold sm:text-xl'>
             Experience
           </h3>
         </li>

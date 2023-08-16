@@ -66,15 +66,20 @@
   border-top-left-radius: 7px;
 }
 
-.slide-in-from-left {
-  animation: slide-from-left 250ms ease-in-out forwards;
+@media screen and (min-width: 340px) {
+  .slide-in-from-right {
+    animation: slide-from-left 250ms ease-in-out forwards;
+  }
 }
 
-.slide-in-from-right {
-  animation: slide-from-right 250ms ease-in-out forwards;
+@media screen and (min-width: 340px) {
+
+  .slide-in-from-left {
+    animation: slide-from-right 250ms ease-in-out forwards;
+  }
 }
 
-@keyframes slide-from-left {
+@keyframes slide-from-right {
   0% {
     transform: translateX(-10px)
   }
@@ -84,7 +89,7 @@
   }
 }
 
-@keyframes slide-from-right {
+@keyframes slide-from-left {
   0% {
     transform: translateX(10px)
   }

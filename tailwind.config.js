@@ -31,7 +31,9 @@ module.exports = {
         text: '#a9a9b3',
         header: '#252627'
       },
-    }
+      screens: {
+        'xs': '300px',
+      },
+    },
   },
-};
-
+}
