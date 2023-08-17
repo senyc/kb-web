@@ -1,4 +1,4 @@
-import SkillList from "./SkillList";
+import SkillList from "@components/information/SkillList";
 
 export default function Frontend() {
   return (

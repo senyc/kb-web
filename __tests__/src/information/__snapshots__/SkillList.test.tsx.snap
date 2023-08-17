@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkillList elements match recorded snapshots SkillList renders items 1`] = `
+<ul
+  className="flex flex-col"
+>
+  <li
+    className="border-b-text mb-2 flex flex-row border-b-2 pb-1"
+  >
+    <h2
+      className="font-bold sm:text-xl"
+    >
+      Tool/Language
+    </h2>
+    <h3
+      className="grow text-right font-bold sm:text-xl"
+    >
+      Experience
+    </h3>
+  </li>
+  <li
+    className="mb-6 flex flex-row"
+  >
+    <h2
+      className="text-lg font-bold"
+    >
+      one
+    </h2>
+    <h3
+      className="grow text-right text-lg italic"
+    >
+      1 Year
+    </h3>
+  </li>
+</ul>
+`;

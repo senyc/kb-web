@@ -1,8 +1,7 @@
 import Image from "next/image";
 
 import autoOwners from '../../images/AutoOwners.jpeg';
-
-import TecnologiesUsed from './TechnologiesUsed';
+import TechnologiesUsed from "@components/information/TechnologiesUsed";
 
 export default function InternshipOne() {
   return (
@@ -28,7 +27,7 @@ export default function InternshipOne() {
           Technologies Used
         </h3>
         <div className=' mt-1'>
-          <TecnologiesUsed items={['React.js', 'Node.js', 'SCSS', 'TypeScript', 'JavaScript', 'npm', 'Jest', 'Cyprus', 'git', 'Express.js']} />
+          <TechnologiesUsed items={['React.js', 'Node.js', 'SCSS', 'TypeScript', 'JavaScript', 'npm', 'Jest', 'Cyprus', 'git', 'Express.js']} />
         </div>
       </div>
     </section>

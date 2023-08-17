@@ -1,4 +1,4 @@
-import ExternalLinks from "@components/wrapper/ExternalLinks";
+import ExternalLinks from "@components/externalNav/ExternalLinks";
 
 export default function Index() {
   return (
