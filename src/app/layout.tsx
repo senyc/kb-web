@@ -18,13 +18,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
-    <html data-theme='dark' lang='en' className='bg-dark'>
-      <body className={`${inter.className} text-text tracking-wide flex-col flex w-full h-screen`}>
+    <html data-theme='dark' lang='en' className='bg-dark h-full'>
+      <body className={`${inter.className} text-text tracking-wide flex-col flex w-full h-full`}>
         <header className='bg-header'>
           <HeaderNavigation />
         </header>
-        {children}
-        <footer className='h-32'/>
+        <main className='flex-grow'>
+          {children}
+        </main>
+        <footer className='h-32 min-h-[8rem]' />
       </body>
     </html>
   );

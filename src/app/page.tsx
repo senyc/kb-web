@@ -2,8 +2,7 @@ import ExternalLinks from "@components/externalNav/ExternalLinks";
 
 export default function Index() {
   return (
-    <main className='flex h-full flex-row items-center justify-center text-center'>
-      <div>
+      <div className='flex h-full flex-col items-center justify-center'>
         <h1 className='text-5xl font-bold'>
           Kyler Bomhof
         </h1>
@@ -14,6 +13,5 @@ export default function Index() {
           <ExternalLinks />
         </div>
       </div>
-    </main>
   );
 }
