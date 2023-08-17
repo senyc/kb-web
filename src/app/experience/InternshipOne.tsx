@@ -1,7 +1,7 @@
-import haworthHQ from '../../images/haworthHQ.jpg';
-
 import Image from "next/image";
-import TecnologiesUsed from './TechnologiesUsed';
+
+import haworthHQ from '../../images/haworthHQ.jpg';
+import TechnologiesUsed from "@components/information/TechnologiesUsed";
 
 export default function InternshipOne() {
   return (
@@ -27,7 +27,7 @@ export default function InternshipOne() {
           Technologies Used
         </h3>
         <div className=' mt-1'>
-          <TecnologiesUsed items={['Bash', 'Config Mgr', 'PowerShell', 'Power Apps', 'SharePoint', 'Git']} />
+          <TechnologiesUsed items={['Bash', 'Config Mgr', 'PowerShell', 'Power Apps', 'SharePoint', 'Git']} />
         </div>
       </div>
     </section>

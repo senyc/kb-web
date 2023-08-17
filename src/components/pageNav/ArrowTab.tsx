@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Direction } from 'src/lib/annotations/components';
+import { Direction } from 'src/lib/annotations';
 
 import LeftTabArrow from './LeftTabArrow';
 import RightTabArrow from './RightTabArrow';
