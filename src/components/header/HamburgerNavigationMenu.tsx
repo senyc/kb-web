@@ -33,8 +33,8 @@ export default function HamburgerNavigationMenu() {
           </li>
           <li>
             <HeaderLink
-              href='experience'
-              label='Experience'
+              href='qualifications'
+              label='Qualifications'
               underline={false}
               onClick={toggleOpen}
             />

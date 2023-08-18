@@ -5,8 +5,8 @@ import TechnologiesUsed from "@components/information/TechnologiesUsed";
 
 export default function InternshipOne() {
   return (
-    <section className='bg-dark border-b-text w-11/12 max-w-3xl border-b-2 pb-4 pt-4'>
-      <h1 className='text-left text-2xl font-semibold sm:ml-3 sm:text-3xl'>
+    <section className='bg-dark border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 pt-4'>
+      <h1 className='text-left font-semibold sm:ml-3 sm:text-2xl'>
         Software Developer Internship
       </h1>
       <p className='mb-3 italic sm:ml-3'>
@@ -23,7 +23,7 @@ export default function InternshipOne() {
         <p className='mt-3'>
           After our project was implemented, agents were able to spend more time doing what they do best: signing new policies, and driving the business forward.
         </p>
-        <h3 className='mt-3 text-2xl font-semibold'>
+        <h3 className='mt-3 text-xl font-semibold'>
           Technologies Used
         </h3>
         <div className=' mt-1'>

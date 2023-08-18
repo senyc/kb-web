@@ -12,7 +12,7 @@ import VersionControl from './VersionControl';
 
 export default function Development() {
   return (
-    <main className='flex w-full flex-row justify-center'>
+    <div className='flex h-full w-full flex-row justify-center'>
       <ArrowTab
         tabs={[
           'Style',
@@ -37,6 +37,6 @@ export default function Development() {
           <Design />,
         ]}
       />
-    </main>
+    </div>
   );
 }

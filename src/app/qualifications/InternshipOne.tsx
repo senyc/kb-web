@@ -5,8 +5,8 @@ import TechnologiesUsed from "@components/information/TechnologiesUsed";
 
 export default function InternshipOne() {
   return (
-    <section className='border-b-text w-11/12 max-w-3xl border-b-2 pb-4 pt-4'>
-      <h2 className='text-left text-2xl font-semibold sm:ml-3 sm:text-3xl'>
+    <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 pt-4'>
+      <h2 className='text-left text-xl font-semibold sm:ml-3 sm:text-2xl'>
         Information Technology Internship
       </h2>
       <h3 className='mb-3 italic sm:ml-3'>
@@ -23,7 +23,7 @@ export default function InternshipOne() {
         <p className='mt-3'>
           I worked full-time in this position from May to August 2022. I then continued with my projects and assignments remotely until May 2023.
         </p>
-        <h3 className='mt-3 text-2xl font-semibold'>
+        <h3 className='mt-3 text-xl font-semibold'>
           Technologies Used
         </h3>
         <div className=' mt-1'>
