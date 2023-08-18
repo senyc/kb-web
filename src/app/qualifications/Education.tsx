@@ -87,7 +87,7 @@ export default function Education() {
             As part of the program, I completed extensive training focusing on design thinking and agile philosophies.
           </p>
           <p className='mt-3'>
-            One takeaway I had was the philosophy of not approaching problems with a "solution first" mindset. Instead, I learned to observe that behavior and work towards identifying unique solutions. This is something I've been able to implement in my own software brainstorming phases, helping me generate more creative and effective solutions for both common and uncommon problems.
+            One takeaway I had was the philosophy of not approaching problems with a "solution first" mindset. Instead, I learned to observe that tendency, and work towards identifying unique solutions. This is something I've been able to implement in my own software brainstorming phases, helping me generate more creative and effective solutions for both common and uncommon problems.
           </p>
         </div>
       </section>
