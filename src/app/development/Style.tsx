@@ -6,10 +6,10 @@ export default function Style() {
       <SkillList
         skills={
           [
-            { heading: 'CSS', experienceWith: '3 Years' },
-            { heading: 'SCSS', experienceWith: '1 Year' },
-            { heading: 'tailwindcss', experienceWith: '1 Year' },
-            { heading: 'Material UI', experienceWith: '1 Year' },
+            { heading: 'CSS', experienceWith: '3 years' },
+            { heading: 'SCSS', experienceWith: '1 year' },
+            { heading: 'tailwindcss', experienceWith: '1 year' },
+            { heading: 'Material UI', experienceWith: '1 year' },
           ]}
       />
     </>

@@ -6,9 +6,9 @@ export default function VersionControl() {
       <SkillList
         skills={
           [
-            { heading: 'Git', experienceWith: '3 Years' },
-            { heading: 'Github', experienceWith: '3 Years' },
-            { heading: 'Bitbucket', experienceWith: '1 Year' },
+            { heading: 'Git', experienceWith: '3 years' },
+            { heading: 'Github', experienceWith: '3 years' },
+            { heading: 'Bitbucket', experienceWith: '1 year' },
           ]}
       />
     </>

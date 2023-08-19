@@ -6,9 +6,9 @@ export default function Design() {
       <SkillList
         skills={
           [
-            { heading: 'Figma', experienceWith: '2 Years' },
-            { heading: 'Lucid Chart', experienceWith: '1 Year' },
-            { heading: 'ExcaliDraw', experienceWith: '1 Year' },
+            { heading: 'Figma', experienceWith: '2 years' },
+            { heading: 'Lucid Chart', experienceWith: '1 year' },
+            { heading: 'ExcaliDraw', experienceWith: '1 year' },
           ]}
       />
     </>
