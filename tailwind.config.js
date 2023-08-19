@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   plugins: [require('daisyui')],
   daisyui: {
     themes: ["light", "dark"],
@@ -10,11 +11,9 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  safelist: [
-    'bg-text'
-  ],
   theme: {
     extend: {
+
       height: {
         '128': '32rem',
       },
@@ -22,9 +21,11 @@ module.exports = {
         '128': '32rem',
       },
       colors: {
-        dark: '#1D1D20',
-        text: '#a9a9b3',
-        header: '#252627'
+        'light-text': '#222222',
+        'light-header': '#FAFAFA',
+        'dark-bg': '#1D1D20',
+        'dark-text': '#a9a9b3',
+        'dark-header': '#252627'
       },
       screens: {
         'xs': '300px',

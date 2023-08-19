@@ -4,7 +4,7 @@ export default function DarkModeButton() {
   return (
     <>
       <button
-        className='btn-circle btn-ghost btn text-text my-auto duration-150 ease-in hover:scale-105'
+        className='btn-circle btn-ghost btn darktext-dark-text my-auto duration-150 ease-in hover:scale-105'
       >
           <DarkModeIcon />
           </button>

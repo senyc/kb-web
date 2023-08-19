@@ -79,19 +79,19 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
         <div className='tabs flex-nowrap'>
           <a
             onClick={() => handleTabSelection(0)}
-            className={`tab tab-bordered text-text ${currentTab == 0 ? 'tab-active border-primary' : ''} w-[4rem]  xs:w-[5.5rem]  sm:w-32`}
+            className={`tab tab-bordered text-light-text dark:text-dark-text ${currentTab == 0 ? 'tab-active border-primary' : ''} w-[4rem] xs:w-[5.5rem] sm:w-32`}
           >
             {tabs[tabValues[0]]}
           </a>
           <a
-            className={`tab tab-bordered text-text ${currentTab == 1 ? 'tab-active border-primary' : ''} w-[4rem]  xs:w-[5.5rem] sm:w-32`}
+            className={`tab tab-bordered text-light-text dark:text-dark-text ${currentTab == 1 ? 'tab-active border-primary' : ''} w-[4rem]  xs:w-[5.5rem] sm:w-32`}
             onClick={() => handleTabSelection(1)}
           >
             {tabs[tabValues[1]]}
           </a>
           <a
             onClick={() => handleTabSelection(2)}
-            className={`tab tab-bordered text-text ${currentTab == 2 ? 'tab-active border-primary' : ''} w-[4rem] xs:w-[5.5rem]  sm:w-32`}
+            className={`tab tab-bordered text-light-text dark:text-dark-text ${currentTab == 2 ? 'tab-active border-primary' : ''} w-[4rem] xs:w-[5.5rem] sm:w-32`}
           >
             {tabs[tabValues[2]]}
           </a>

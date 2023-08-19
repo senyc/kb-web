@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
-    <html data-theme='dark' lang='en' className='bg-dark h-full'>
-      <body className={`${inter.className} text-text tracking-wide flex-col flex w-full h-full`}>
-        <header className='bg-header'>
+    <html data-theme='dark' lang='en' className='dark h-full'>
+      <body className={`${inter.className} dark:bg-dark-bg text-light-text dark:text-dark-text tracking-wide flex-col flex w-full h-full`}>
+        <header className='bg-light-header dark:bg-dark-header'>
           <HeaderNavigation />
         </header>
-        <main className='flex-grow'>
+        <main className='dark:text-dark-text flex-grow'>
           {children}
         </main>
         <footer className='h-32 min-h-[8rem]' />
