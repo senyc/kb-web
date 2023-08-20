@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Kyler Bomhof',
-  description: 'My website',
+  description: "Kyler Bomhof's portfolio site",
   keywords: ['Kyler Bomhof', 'senyc']
 };
 
