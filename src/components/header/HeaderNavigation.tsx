@@ -40,7 +40,7 @@ export default function HeaderNavigation() {
             <HamburgerNavigationMenu />
           </div>
         </nav>
-        <div className='border-r-text h-7 border-r-[1px] sm:ml-4' />
+        <div className='border-r-text ml-1 mr-1 h-7 border-r-2 dark:border-r-[1px] sm:ml-5' />
         <DarkModeButton />
       </div>
     </div>
