@@ -24,7 +24,7 @@ export default function DarkModeButton() {
 
   return (
     <button
-      className='btn-circle btn-ghost btn duration-150 ease-in hover:scale-105'
+      className='btn-circle btn-ghost btn mr-1 duration-150 ease-in hover:scale-105'
       onClick={toggleMode}
     >
       {!isDarkMode ? <ModeNightIcon /> : <WbSunnyIcon />}
