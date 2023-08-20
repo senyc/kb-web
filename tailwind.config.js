@@ -3,7 +3,17 @@ module.exports = {
   darkMode: 'class',
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ["light", "dark"],
+    themes: [
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
+          'base-100': "#1D1D20",
+        },
+        light: {
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+        },
+      },
+    ],
   },
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,14 +32,14 @@ module.exports = {
       },
       colors: {
         'light-text': '#222222',
-        'light-header': '#FAFAFA',
+        'light-header': '#F2F2F2',
         'dark-bg': '#1D1D20',
         'dark-text': '#a9a9b3',
-        'dark-header': '#252627'
+        'dark-header': '#252627',
       },
       screens: {
         'xs': '300px',
       },
     },
   },
-}
+};
