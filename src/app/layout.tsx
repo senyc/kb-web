@@ -11,8 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Kyler Bomhof',
-  description: "Kyler Bomhof's portfolio site",
-  keywords: ['Kyler Bomhof', 'senyc']
+  description: 'Kyler is passionate about software architecture and constructing applications such that they are testable, and actually tested.',
+  keywords: ['Kyler Bomhof', 'senyc', 'full-stack']
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
