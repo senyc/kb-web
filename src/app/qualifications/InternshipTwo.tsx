@@ -27,7 +27,7 @@ export default function InternshipOne() {
           Technologies Used
         </h3>
         <div className=' mt-1'>
-          <TechnologiesUsed items={['React.js', 'Node.js', 'SCSS', 'TypeScript', 'JavaScript', 'npm', 'Jest', 'Cypress', 'git', 'Express.js']} />
+          <TechnologiesUsed items={['React.js', 'Node.js', 'SCSS', 'TypeScript', 'JavaScript', 'npm', 'Jest', 'Cypress', 'Git', 'Express.js']} />
         </div>
       </div>
     </section>

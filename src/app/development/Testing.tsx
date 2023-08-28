@@ -6,7 +6,7 @@ export default function Testing() {
       <SkillList
         skills={
           [
-            { heading: 'Pytest', experienceWith: '1 years' },
+            { heading: 'pytest', experienceWith: '1 years' },
             { heading: 'Jest', experienceWith: '1 years' },
             { heading: 'Cypress', experienceWith: '6 months' },
             { heading: 'Selenium', experienceWith: '6 months' },

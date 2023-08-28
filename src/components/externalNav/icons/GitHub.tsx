@@ -1,4 +1,4 @@
-export default function Github() {
+export default function GitHub() {
   return (
     <a
       className='duration-150 ease-in hover:scale-110'
