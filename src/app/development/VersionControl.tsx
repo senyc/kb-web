@@ -7,7 +7,7 @@ export default function VersionControl() {
         skills={
           [
             { heading: 'Git', experienceWith: '3 years' },
-            { heading: 'Github', experienceWith: '3 years' },
+            { heading: 'GitHub', experienceWith: '3 years' },
             { heading: 'Bitbucket', experienceWith: '1 year' },
           ]}
       />
