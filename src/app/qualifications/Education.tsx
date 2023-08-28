@@ -80,8 +80,8 @@ export default function Education() {
         </h5>
         <div>
           <p className='mt-1'>
-            <a className='underline' href='https://universityinnovationfellows.org/'>University Innovation Fellows</a> (UIF), is an organization based at Stanford University that aims to teach students
-            about <a className='underline' href='https://www.interaction-design.org/literature/topics/design-thinking#:~:text=Design%20thinking%20is%20a%20methodology,ways%2C%20create%20numerous%20ideas%20in'>design thinking</a>, and various other entrepreneurial skills.
+            <a className='underline' target='_blank' href='https://universityinnovationfellows.org/'>University Innovation Fellows</a> (UIF), is an organization based at Stanford University that aims to teach students
+            about <a className='underline' target='_blank' href='https://www.interaction-design.org/literature/topics/design-thinking#:~:text=Design%20thinking%20is%20a%20methodology,ways%2C%20create%20numerous%20ideas%20in'>design thinking</a>, and various other entrepreneurial skills.
           </p>
           <p className='mt-3'>
             As part of the program, I completed extensive training focusing on design thinking and agile philosophies.

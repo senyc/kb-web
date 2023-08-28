@@ -15,7 +15,7 @@ export default function InternshipOne() {
       <Image className='mx-auto mb-3 rounded-2xl sm:float-right sm:mx-0 sm:mb-0 sm:ml-3 md:mr-3' src={autoOwners} alt='Auto Owners Intern Group Photo' width={275} quality={100} />
       <div className='text-lg sm:ml-3 sm:mr-3'>
         <p>
-          During my stay at <a className='underline' href='https://fortune.com/company/auto-owners-insurance/fortune500/'>Auto-Owners</a>, I worked on both ends of the stack, utilizing modern libraries, languages, and frameworks to  complete requirements on time, and with low tech debt.
+          During my stay at <a className='underline' target='_blank' href='https://fortune.com/company/auto-owners-insurance/fortune500/'>Auto-Owners</a>, I worked on both ends of the stack, utilizing modern libraries, languages, and frameworks to  complete requirements on time, and with low tech debt.
         </p>
         <p className='mt-3'>
           While following the Scrum framework, my team of business analysts, QA engineers, architects, and other developers were able to accomplish our goal of building tools to streamline labor-intensive maintenance tasks performed by agents.
