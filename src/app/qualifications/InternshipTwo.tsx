@@ -10,7 +10,7 @@ export default function InternshipOne() {
         Software Developer Internship
       </h1>
       <p className='mb-3 italic sm:ml-3'>
-        May 2023 - Present
+        May - Aug 2023
       </p>
       <Image className='mx-auto mb-3 rounded-2xl sm:float-right sm:mx-0 sm:mb-0 sm:ml-3 md:mr-3' src={autoOwners} alt='Auto Owners Intern Group Photo' width={275} quality={100} />
       <div className='text-lg sm:ml-3 sm:mr-3'>
