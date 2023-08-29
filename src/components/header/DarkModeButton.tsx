@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import ModeNightIcon from '@mui/icons-material/ModeNight';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 export default function DarkModeButton() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
@@ -27,7 +27,7 @@ export default function DarkModeButton() {
       className='btn-circle btn-ghost btn mr-1 duration-150 ease-in hover:scale-105'
       onClick={toggleMode}
     >
-      {!isDarkMode ? <ModeNightIcon /> : <WbSunnyIcon />}
+      {!isDarkMode ? <DarkModeIcon /> : <WbSunnyIcon />}
     </button>
   );
 }
