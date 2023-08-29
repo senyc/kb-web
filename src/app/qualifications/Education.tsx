@@ -12,16 +12,16 @@ export default function Education() {
             Michigan Technological University
           </h2>
           <div>
-            <p className='mt-1'>
+            <p className='mt-0 text-lg'>
               Bachelor of Science - B.Sc, Computer Science
             </p>
-            <p className='mt-1.5 italic'>
+            <p className='mt-1 italic'>
               Aug 2020 - Dec 2023
             </p>
           </div>
         </div>
       </section>
-      <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 sm:ml-3'>
+      <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 text-lg sm:ml-3'>
         <h3 className='mb-2 mt-3 text-left text-2xl font-semibold'>
           Scholastic Awards
         </h3>
@@ -54,7 +54,7 @@ export default function Education() {
           </div>
         </div>
       </section>
-      <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 sm:ml-3'>
+      <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 text-lg sm:ml-3'>
         <h3 className='mb-4 mt-3 text-left text-2xl font-semibold'>
           Extracurricular Activities
         </h3>
