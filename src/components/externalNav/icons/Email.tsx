@@ -11,16 +11,16 @@ export default function Email() {
 
   const onClick = async () => {
     if (allowEmailAccess) {
-      window.location.href = 'mailto:kdbomhof@gmail.com';
-    } else {
-      const token = await recaptchaRef.current?.executeAsync();
+      window.location.href = `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`;
+      return;
+    }
+    const token = await recaptchaRef.current?.executeAsync();
 
-      if (token) {
-        const isCaptchaVerified = await verifyCaptcha(token);
-        if (isCaptchaVerified) {
-          setAllowEmailAccess(true);
-          window.location.href = 'mailto:kdbomhof@gmail.com';
-        }
+    if (token) {
+      const isCaptchaVerified = await verifyCaptcha(token);
+      if (isCaptchaVerified) {
+        setAllowEmailAccess(true);
+        window.location.href = `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`;
       }
     }
   };
