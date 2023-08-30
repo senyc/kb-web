@@ -1,18 +1,16 @@
 'use client';
 
-
-import { useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { createRef } from 'react';
+
 import verifyCaptha from '@app/captcha';
 
 export default function Email() {
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = createRef<ReCAPTCHA>();
 
-  const onSubmitWithReCAPTCHA = () => {
-    const token = recaptchaRef.current?.execute();
-    (async function() {
-      await verifyCaptha(token!);
-    })();
+  const onSubmitWithReCAPTCHA = async () => {
+    const token = await recaptchaRef.current?.executeAsync();
+    token && await verifyCaptha(token);
   };
 
   return (
