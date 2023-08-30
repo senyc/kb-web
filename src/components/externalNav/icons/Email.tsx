@@ -1,23 +1,35 @@
 'use client';
 
 import ReCAPTCHA from 'react-google-recaptcha';
-import { createRef } from 'react';
+import { createRef, useState } from 'react';
 
-import verifyCaptha from '@app/captcha';
+import verifyCaptcha from '@app/captcha';
 
 export default function Email() {
+  const [allowEmailAccess, setAllowEmailAccess] = useState<boolean>(false);
   const recaptchaRef = createRef<ReCAPTCHA>();
 
-  const onSubmitWithReCAPTCHA = async () => {
-    const token = await recaptchaRef.current?.executeAsync();
-    token && await verifyCaptha(token);
+  const onClick = async () => {
+    if (allowEmailAccess) {
+      window.location.href = 'mailto:kdbomhof@gmail.com';
+    } else {
+      const token = await recaptchaRef.current?.executeAsync();
+
+      if (token) {
+        const isCaptchaVerified = await verifyCaptcha(token);
+        if (isCaptchaVerified) {
+          setAllowEmailAccess(true);
+          window.location.href = 'mailto:kdbomhof@gmail.com';
+        }
+      }
+    }
   };
 
   return (
     <div>
       <button
         className='duration-150 ease-in hover:scale-110'
-        onClick={onSubmitWithReCAPTCHA}
+        onClick={onClick}
         aria-label='Email'
         title='Email'>
         <svg
