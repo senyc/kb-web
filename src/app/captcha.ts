@@ -4,15 +4,21 @@ import axios from 'axios';
 
 export default async function verifyCaptha(token: string | null): Promise<boolean> {
   if (token === null) {
-    return false ;
+    return false;
   }
 
-  const res = await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_SECRET_KEY}&response=${token}`
-  );
+  try {
+    const res = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_SECRET_KEY}&response=${token}`
+    );
 
-  console.log(`reCAPTCHA attempt resulted in ${res.data.success}${res.data['error-codes'] !== undefined ? ' due to ' + res.data['error-codes'] : ''}`);
+    const { success, 'error-codes': errorCodes } = res.data;
+    console.log(`reCAPTCHA attempt resulted in ${success}${errorCodes ? ' due to ' + errorCodes : ''}`);
+    return success;
 
-  return res.data.success;
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
 }
 
