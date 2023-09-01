@@ -3,3 +3,8 @@ export enum Direction {
   Left,
   NoDirection
 }
+
+
+export type CaptchaExtensionProps = {
+  onClick: () => Promise<void>;
+}

@@ -1,8 +1,6 @@
-interface EmailProps {
-  onClick: () => Promise<void>;
-}
+import { CaptchaExtensionProps } from "@annotations";
 
-export default function Email({ onClick }: EmailProps){
+export default function Email({ onClick }: CaptchaExtensionProps){
   return (
     <button
       className='duration-150 ease-in hover:scale-110'

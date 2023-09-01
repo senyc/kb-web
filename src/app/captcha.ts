@@ -14,8 +14,8 @@ export default async function verifyCaptha(token: string | null): Promise<boolea
 
     const { success, 'error-codes': errorCodes } = res.data;
     console.log(`reCAPTCHA attempt resulted in ${success}${errorCodes ? ' due to ' + errorCodes : ''}`);
-
     return success;
+
   } catch (e) {
     console.log(e);
     return false;

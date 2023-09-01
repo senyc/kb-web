@@ -1,11 +1,13 @@
 'use client';
 
-import { useState, createRef, ButtonHTMLAttributes } from 'react';
+import { useState, createRef, ComponentType } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import verifyCaptcha from '@app/captcha';
 
-export default function CaptchaRequest(WrappedComponent: any) {
-  return (props: any) => {
+import verifyCaptcha from '@app/captcha';
+import { CaptchaExtensionProps } from '@annotations';
+
+export default function CaptchaRequest<P>(WrappedComponent: ComponentType<P>) {
+  return (props: Omit<P, keyof CaptchaExtensionProps>) => {
     const [allowEmailAccess, setAllowEmailAccess] = useState<boolean>(false);
     const recaptchaRef = createRef<ReCAPTCHA>();
 
@@ -26,18 +28,18 @@ export default function CaptchaRequest(WrappedComponent: any) {
     };
 
     return (
-      <div>
+      <>
         <WrappedComponent
-          {...props}
+          {...props as P}
           onClick={onClick}
         />
         <ReCAPTCHA
-          className="w-0"
+          className='absolute'
           ref={recaptchaRef}
           size="invisible"
           sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
         />
-      </div>
+      </>
     );
   };
 
