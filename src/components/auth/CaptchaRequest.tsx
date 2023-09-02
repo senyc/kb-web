@@ -1,18 +1,18 @@
 'use client';
 
-import { useState, createRef, ComponentType } from 'react';
+import { createRef, ComponentType } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import verifyCaptcha from '@app/captcha';
+import verifyCaptcha from '@actions/captcha';
 import { CaptchaExtensionProps } from '@annotations';
+import { getUserAuthorized, setUserAuthorized } from '@actions/context';
 
 export default function CaptchaRequest<P>(WrappedComponent: ComponentType<P>) {
   return (props: Omit<P, keyof CaptchaExtensionProps>) => {
-    const [allowEmailAccess, setAllowEmailAccess] = useState<boolean>(false);
     const recaptchaRef = createRef<ReCAPTCHA>();
 
     const onClick = async () => {
-      if (allowEmailAccess) {
+      if (getUserAuthorized()) {
         window.location.href = `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`;
         return;
       }
@@ -21,7 +21,7 @@ export default function CaptchaRequest<P>(WrappedComponent: ComponentType<P>) {
       if (token) {
         const isCaptchaVerified = await verifyCaptcha(token);
         if (isCaptchaVerified) {
-          setAllowEmailAccess(true);
+          setUserAuthorized(true);
           window.location.href = `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`;
         }
       }
