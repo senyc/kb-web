@@ -56,6 +56,9 @@ dependencies:
   react-outside-click-handler:
     specifier: ^1.3.0
     version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
+  server-only-context:
+    specifier: ^0.0.4
+    version: 0.0.4(react@18.2.0)
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3(ts-node@10.9.1)
@@ -4637,6 +4640,19 @@ packages:
     dependencies:
       lru-cache: 6.0.0
     dev: true
+
+  /server-only-context@0.0.4(react@18.2.0):
+    resolution: {integrity: sha512-1rYxmp8IMLVTFw1ozM6KD/qtyUNN7VN3HN8n3SLJ/kjofY4u3LC1EvjEDPkqpiOKv6oZ6x0w0pTujoUGBTSK1A==}
+    peerDependencies:
+      react: next
+    dependencies:
+      react: 18.2.0
+      server-only: 0.0.1
+    dev: false
+
+  /server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false
 
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}

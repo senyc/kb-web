@@ -25,6 +25,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@actions/*": [
+        "./src/actions/*"
+      ],
       "@app/*": [
         "./src/app/*"
       ],
