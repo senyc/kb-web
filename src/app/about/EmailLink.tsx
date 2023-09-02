@@ -1,7 +1,7 @@
 'use client';
 
 import { CaptchaExtensionProps } from "@annotations";
-import CaptchaRequest from "@components/externalNav/icons/CaptchaRequest";
+import CaptchaRequest from "@components/auth/CaptchaRequest";
 
 function EmailText({ onClick }: CaptchaExtensionProps) {
   return (
