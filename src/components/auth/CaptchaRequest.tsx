@@ -19,7 +19,7 @@ export default function CaptchaRequest<P>(WrappedComponent: ComponentType<P>) {
             headers: {
               'Content-Type': "application/json",
             },
-            body: JSON.stringify(token),
+            body: JSON.stringify({ token: token }),
           }
         );
         const res = await isCaptchaVerified.json();
