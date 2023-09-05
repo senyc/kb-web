@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-export default async function verifyCaptha(token: string | null): Promise<boolean> {
+export default async function verifyCaptha(token: string): Promise<boolean> {
   if (token === null) {
     return false;
   }

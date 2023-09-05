@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 import axios from 'axios';
 
-export async function POST(token: string | null) {
+export async function POST(token: string) {
   if (token === null) {
     return NextResponse.json({ success: false });
   }
