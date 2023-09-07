@@ -1,24 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 export default function DarkModeButton() {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const [showDarkModeButton, setShowDarkModeButton] = useState<boolean>();
+
+  useEffect(() => {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setShowDarkModeButton(false);
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
 
   const toggleMode = () => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-      document.documentElement.setAttribute('data-theme', 'light');
-      setIsDarkMode(false);
+    if (localStorage.theme == 'dark') {
+      localStorage.theme = 'light';
+      setShowDarkModeButton(true)
     } else {
-      document.documentElement.classList.remove('light');
+      localStorage.theme = 'dark';
+      setShowDarkModeButton(false)
+    }
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
       document.documentElement.setAttribute('data-theme', 'dark');
-      setIsDarkMode(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   };
 
@@ -27,7 +40,7 @@ export default function DarkModeButton() {
       className='btn-circle btn-ghost btn mr-1 duration-150 ease-in hover:scale-105'
       onClick={toggleMode}
     >
-      {!isDarkMode ? <DarkModeIcon /> : <WbSunnyIcon />}
+      {showDarkModeButton ? <DarkModeIcon /> : <WbSunnyIcon />}
     </button>
   );
 }
