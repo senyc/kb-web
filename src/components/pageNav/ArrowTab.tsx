@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 import { Direction } from 'src/lib/annotations';
 
@@ -45,6 +46,11 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
   const [tabValues, setTabValues] = useState<number[]>([0, 1, 2]);
   const [animationDirection, setAnimationDirection] = useState<Direction>(Direction.NoDirection);
 
+  const swipeableHandlers = useSwipeable({
+    onSwipedLeft: () => nextTab(),
+    onSwipedRight: () => prevTab(),
+  });
+
   const nextTab = () => {
     if (currentTab < 2) {
       setCurrentTab(currentTab => (currentTab + 1) as Tab);
@@ -71,7 +77,7 @@ export default function ArrowTab({ tabs, tabContent }: ArrowTabProps) {
   };
 
   return (
-    <div>
+    <div {...swipeableHandlers}>
       <div className='mt-8 flex items-center justify-center space-x-2'>
         <LeftTabArrow
           onClick={prevTab}
