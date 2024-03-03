@@ -7,3 +7,9 @@ export enum Direction {
 export type CaptchaExtensionProps = {
   onClick: () => Promise<void>;
 }
+
+export interface FormDropdownOption {
+  label: string | number;
+  value: any;
+  hidden?: boolean;
+}

@@ -31,6 +31,12 @@ export default function HeaderNavigation() {
             </li>
             <li>
               <HeaderLink
+                href='contact'
+                label='Contact'
+              />
+            </li>
+            <li>
+              <HeaderLink
                 href='about'
                 label='About'
               />
