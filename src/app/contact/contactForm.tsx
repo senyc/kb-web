@@ -1,59 +1,125 @@
 'use client';
-import { useEffect, useState } from "react";
+
+import { createRef, useEffect, useRef, useState } from "react";
 import { useFormState } from 'react-dom';
 
+import ReCAPTCHA from 'react-google-recaptcha';
 import TextareaAutosize from 'react-textarea-autosize';
-import { toast} from 'react-toastify'
+import { toast } from 'react-toastify';
 
 import Dropdown from "./dropdown";
 import RequiredLabel from './requiredLabel';
 import { sendContact } from './action';
+import { ReasonForContact } from "@annotations";
 
 const initialState = {
   status: "",
   message: ""
 };
 
-export default function ContactForm() {
+interface ContactFormProps {
+  defaultReasonForContact?: ReasonForContact;
+}
+export default function ContactForm({ defaultReasonForContact = ReasonForContact.Default }: ContactFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [reasonForContact, setReasonForContact] = useState("na");
+  // We should set this in a useEffect hook in case the value passed in from the url is not valid
+  const [reasonForContact, setReasonForContact] = useState(defaultReasonForContact);
   const [phone, setPhone] = useState("");
   const [additionalComments, setAdditionalComments] = useState("");
   const [preferredCommunication, setPreferredCommunication] = useState("email");
 
-  //@ts-ignore
+  const recaptchaRef = createRef<ReCAPTCHA>();
+
+  const inputRef = useRef<HTMLFormElement>(null);
+
   const [state, action] = useFormState(sendContact, initialState);
 
-  useEffect(() =>{
+  useEffect(() => {
     if (state.status === "success") {
-      toast.info(state.message)
+      toast.info(state.message);
     } else if (state.status === "failure") {
-      toast.warn(state.message)
+      toast.warn(state.message);
     }
-  },[state])
+  }, [state]);
 
   const resetAction = () => {
     setPhone("");
     setEmail("");
     setName("");
-    setReasonForContact("");
+    setReasonForContact(ReasonForContact.Default);
     setAdditionalComments("");
-    setPreferredCommunication("");
+    // Default option is email
+    setPreferredCommunication("email");
+  };
+
+  const phoneNumberValid = () => {
+    if (phone != "") {
+      if (phone.match(/[a-zA-Z]/)) {
+        return false;
+      }
+    }
+    return true;
+  };
+  const onSubmit = async (e: any) => {
+    // Don't automatically send the form action until captcha function completes
+    e.preventDefault();
+    if (!phoneNumberValid()) {
+      toast.warn("Please enter in a valid phone number and try again");
+      return;
+    }
+
+    if (recaptchaRef.current) {
+      const token = await recaptchaRef.current?.executeAsync();
+      if (token != null) {
+        inputRef.current && inputRef.current.requestSubmit();
+      } else {
+        toast.warn("Please try submitting again");
+      }
+    }
   };
 
   return (
     <form
-      className="border-t-text flex w-full max-w-3xl flex-col border-t-[.5px] p-1"
+      className=" border-t-text flex w-full max-w-3xl flex-col border-t-[.5px] p-1"
       action={action}
+      ref={inputRef}
     >
+      <ReCAPTCHA
+        className='absolute'
+        ref={recaptchaRef}
+        size='invisible'
+        sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
+      />
+      <div className="label">
+        <label className="label-text mt-2 flex flex-row gap-1" htmlFor="reasonForContact-input">Reason for Contact</label>
+      </div>
+      <Dropdown
+        selectedValue={reasonForContact}
+        setSelectedValue={setReasonForContact}
+        defaultValue={"na"}
+
+        id="reassonForContact-input"
+        options={[
+          { label: "Reason for contact", value: String(ReasonForContact.Default), hidden: true },
+          { label: "Resume Request", value: String(ReasonForContact.ResumeRequest) },
+          { label: "General Contact", value: String(ReasonForContact.GeneralContact) },
+          { label: "Request for Interview", value: String(ReasonForContact.InterviewRequest) },
+          { label: "Other", value: String(ReasonForContact.Other) },
+        ]}
+      />
+      <input
+        name="reasonForContact"
+        type="hidden"
+        required
+        value={reasonForContact}
+      />
       <RequiredLabel
         htmlFor="name-input"
         labelText="Name"
       />
       <input
         required
-        autoFocus
         type="text"
         name="name"
         id="name-input"
@@ -88,6 +154,11 @@ export default function ContactForm() {
         value={phone}
         onChange={e => setPhone(e.target.value)}
       />
+      <input
+        type="hidden"
+        value={preferredCommunication}
+        name="preferredCommunication"
+      />
       {phone && (
         <div className="w-96">
           <div className="label">
@@ -98,63 +169,35 @@ export default function ContactForm() {
               <span className="label-text">Email</span>
               <input
                 type="radio"
-                name="preferredCommunication"
                 className="radio checked:bg-blue-500"
                 value="email"
                 checked={preferredCommunication == "email"}
-                onChange={e=> setPreferredCommunication(e.target.value)}
+                onChange={e => setPreferredCommunication(e.target.value)}
               />
             </label>
             <label className="label cursor-pointer">
               <span className="label-text">Phone</span>
               <input
                 type="radio"
-                name="preferredCommunication"
                 className="radio checked:bg-blue-500"
                 value="phone"
                 checked={preferredCommunication == "phone"}
-                onChange={e=> setPreferredCommunication(e.target.value)}
+                onChange={e => setPreferredCommunication(e.target.value)}
               />
             </label>
-              <label className="label cursor-pointer">
-                <span className="label-text">No preference</span>
-                <input
-                  type="radio"
-                  name="preferredCommunication"
-                  className="radio checked:bg-blue-500"
-                  value="no preference"
-                  checked={preferredCommunication == "no preference"}
-                  onChange={e=> setPreferredCommunication(e.target.value)}
-                />
-              </label>
+            <label className="label cursor-pointer">
+              <span className="label-text">No preference</span>
+              <input
+                type="radio"
+                className="radio checked:bg-blue-500"
+                value="no preference"
+                checked={preferredCommunication == "no preference"}
+                onChange={e => setPreferredCommunication(e.target.value)}
+              />
+            </label>
           </div>
         </div>
-      )
-
-      }
-      <RequiredLabel
-        htmlFor="reasonForContact-input"
-        labelText="Reason for contact"
-      />
-      <input
-        name="reasonForContact"
-        type="hidden"
-        required
-        value={reasonForContact}
-      />
-      <Dropdown
-        selectedValue={reasonForContact}
-        setSelectedValue={setReasonForContact}
-        defaultValue={"na"}
-        id="reassonForContact-input"
-        options={[
-          { label: "Reason for contact", value: "na", hidden: true },
-          { label: "Resume Request", value: "resumeRequest" },
-          { label: "General Contact", value: "generalContact" },
-          { label: "Request for Interview", value: "interviewRequest" },
-          { label: "Other", value: "other" },
-        ]}
-      />
+      )}
       <div className="label">
         <label className="label-text mt-2 flex flex-row gap-1" htmlFor="additionalComments-input">Additional comments</label>
       </div>
@@ -171,14 +214,16 @@ export default function ContactForm() {
       <div
         className="mt-5 flex flex-row justify-between"
       >
-        <button
-          type="submit"
+        {recaptchaRef && (<button
           disabled={name.length <= 0 || email.length <= 0 || reasonForContact.length <= 0}
           className="input input-bordered w-24 rounded-lg border-[.5px] p-0 font-normal disabled:cursor-not-allowed disabled:border-[.5px] disabled:border-gray-200 disabled:border-opacity-20 disabled:opacity-90"
+          onClick={onSubmit}
         >
           {"Submit"}
-        </button>
+        </button>)
+        }
         <button
+          type="button"
           className="input input-bordered w-24 rounded-lg border-[.5px] p-0 font-normal "
           onClick={resetAction}
         >

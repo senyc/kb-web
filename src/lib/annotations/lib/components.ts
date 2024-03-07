@@ -13,3 +13,11 @@ export interface FormDropdownOption {
   value: any;
   hidden?: boolean;
 }
+
+export enum ReasonForContact {
+  Default = 'na',
+  ResumeRequest = 'resumeRequest',
+  GeneralContact = 'generalContact',
+  InterviewRequest = 'interviewRequest',
+  Other = 'other'
+}

@@ -1,5 +1,6 @@
 'use server';
 
+import axios from "axios";
 import { z } from "zod";
 
 interface EmailContents {
@@ -18,7 +19,8 @@ export async function sendContact(prevState: { message: string, status: string; 
     phone: z.string().optional(),
     reasonForContact: z.string(),
     additionalComments: z.string().optional(),
-    preferredCommunication: z.string().optional()
+    preferredCommunication: z.string().optional(),
+    captchaToken: z.string()
   });
 
   const parse = schema.safeParse({
@@ -28,19 +30,40 @@ export async function sendContact(prevState: { message: string, status: string; 
     reasonForContact: formData.get("reasonForContact"),
     additionalComments: formData.get("additionalComments"),
     preferredCommunication: formData.get("preferredCommunication"),
+    captchaToken: formData.get("g-recaptcha-response"),
   });
-
   if (!parse.success) {
     return { status: "failure", message: "Please fill in all required fields" };
   }
 
   try {
-    sendEmail(parse.data);
+    await checkCaptchaValidity(parse.data.captchaToken)
+    // console.log("sent email")
+    await sendEmail(parse.data);
     return { status: "success", message: "Message sent" };
-  } catch {
+  } catch (e) {
+    console.log(e)
     return { status: "failure", message: "Message failed to send" };
   }
 };
+
+/**
+* @throws {Error} if user fails captcha
+*/
+async function checkCaptchaValidity(token: string | null) {
+  if (token == null) {
+    throw new Error("token is null")
+  }
+  const res = await axios.post(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_SECRET_KEY}&response=${token}`
+  );
+
+  const { success, 'error-codes': errorCodes } = res.data;
+  console.log(`reCAPTCHA attempt resulted in ${success}${errorCodes ? ' due to ' + errorCodes : ''}`);
+  if (!success) {
+    throw new Error("failed captcha")
+  }
+}
 
 /**
  * @throws {Error} if message fails to send.
@@ -51,7 +74,7 @@ async function sendEmail(emailContents: EmailContents) {
   const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
   const apiKey = apiInstance.authentications['apiKey'];
-  apiKey.apiKey = 'api';
+  apiKey.apiKey = process.env.brevo_api_key;
 
   const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
 
@@ -65,7 +88,7 @@ async function sendEmail(emailContents: EmailContents) {
   };
 
   sendSmtpEmail.subject = "kylerbomhof.com contact form";
-  sendSmtpEmail.sender = { "name": "Kyler Bomhof", "email": "kdbomhof@gmail.com" };
+  sendSmtpEmail.sender = { "name": "Kyler Bomhof", "email": "contact@jasontasks.com" };
   sendSmtpEmail.to = [{ "email": "kdbomhof@gmail.com", "name": "Kyler Bomhof" }];
   sendSmtpEmail.htmlContent = `
     <html>
