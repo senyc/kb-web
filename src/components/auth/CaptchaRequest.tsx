@@ -5,7 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 import { CaptchaExtensionProps } from '@annotations';
 
-export default function CaptchaRequest<P>(WrappedComponent: ComponentType<P>) {
+export default function CaptchaRequest<P>(WrappedComponent: ComponentType<P>, href: string) {
   return (props: Omit<P, keyof CaptchaExtensionProps>) => {
     const recaptchaRef = createRef<ReCAPTCHA>();
 
@@ -24,7 +24,7 @@ export default function CaptchaRequest<P>(WrappedComponent: ComponentType<P>) {
         );
         const res = await isCaptchaVerified.json();
         if (res && res.success) {
-          window.location.href = `mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`;
+          window.open(href, '_blank');
         }
       }
     };
