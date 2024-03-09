@@ -74,7 +74,7 @@ async function sendEmail(emailContents: EmailContents) {
   const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
   const apiKey = apiInstance.authentications['apiKey'];
-  apiKey.apiKey = process.env.brevo_api_key;
+  apiKey.apiKey = process.env.BREVO_API_KEY;
 
   const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
 
