@@ -1,6 +1,7 @@
 'use client';
 
 import { createRef, useEffect, useRef, useState } from "react";
+//@ts-ignore
 import { useFormState } from 'react-dom';
 
 import ReCAPTCHA from 'react-google-recaptcha';
