@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-import mtuLogo from '../../images/MTULogo.jpg';
+import mtuLogo from '../../../images/MTULogo.jpg';
 
 export default function Education() {
   return (
     <>
-      <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 sm:ml-3'>
-        <Image className='mx-auto mb-3 rounded-md sm:float-right sm:mx-0 sm:mb-0 sm:ml-3 md:mr-3' src={mtuLogo} alt='Michigan Technological University logo' width={285} quality={100} />
+      <section className='w-11/12 max-w-3xl pb-1 sm:ml-3'>
+        <Image className='mx-auto rounded-md sm:float-right sm:mx-0 sm:mb-0 sm:ml-3 md:mr-3' src={mtuLogo} alt='Michigan Technological University logo' width={165} quality={100} />
         <div className='mt-2'>
           <h2 className='text-left text-xl font-semibold  sm:text-2xl'>
             Michigan Technological University
@@ -15,54 +15,18 @@ export default function Education() {
             <p className='mt-0 text-lg'>
               Bachelor of Science - B.Sc, Computer Science
             </p>
-            <p className='mt-1 italic'>
-              Aug 2020 - Dec 2023
-            </p>
           </div>
         </div>
       </section>
       <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 text-lg sm:ml-3'>
-        <h3 className='mb-2 mt-3 text-left text-2xl font-semibold'>
-          Scholastic Awards
-        </h3>
-        <div className='flex flex-row gap-8 '>
-          <div>
-            <h4 className='mt-0.5 text-left font-semibold'>
-              Dean's list 4.00
-            </h4>
-            <ul className='ml-6 list-disc'>
-              <li>
-                Fall 2022
-              </li>
-              <li>
-                Fall 2020
-              </li>
-            </ul>
-          </div>
-          <div >
-            <h4 className='mt-0.5 text-left font-semibold'>
-              Dean's list 3.50-3.99
-            </h4>
-            <ul className='ml-6 list-disc'>
-              <li>
-                Spring 2023
-              </li>
-              <li>
-                Fall 2021
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section className='border-b-text w-11/12 max-w-3xl border-b-[1px] pb-4 text-lg sm:ml-3'>
-        <h3 className='mb-4 mt-3 text-left text-2xl font-semibold'>
+        <h3 className='border-b-text mb-4 border-b-[1px] pb-1 text-left text-2xl font-semibold'>
           Extracurricular Activities
         </h3>
         <h4 className='text-left text-xl font-semibold'>
           IT Oxygen Student Enterprise
         </h4>
         <h5 className='mb-3 italic'>
-          Aug 2021 - Present
+          Aug 2021 - Dec 2023
         </h5>
         <div>
           <p className='mt-1'>
@@ -76,7 +40,7 @@ export default function Education() {
           University Innovation Fellows
         </h4>
         <h5 className='mb-3 italic'>
-          Aug 2022 - Present
+          Aug 2022 - Dec 2023
         </h5>
         <div>
           <p className='mt-1'>

@@ -12,26 +12,31 @@ export default function HeaderNavigation() {
           <ul className='hidden flex-row gap-4 sm:flex'>
             <li>
               <HeaderLink
-                href='BomhofKylerResume.pdf'
-                label='Resume'
-                openInNewTab={true}
-              />
-            </li>
-            <li>
-              <HeaderLink
-                href='qualifications'
+                href='/qualifications'
                 label='Qualifications'
               />
             </li>
             <li>
               <HeaderLink
-                href='development'
+                href='contact/resumeRequest'
+                label='Resume'
+              />
+            </li>
+            <li>
+              <HeaderLink
+                href='/development'
                 label='Development'
               />
             </li>
             <li>
               <HeaderLink
-                href='about'
+                href='/contact'
+                label='Contact'
+              />
+            </li>
+            <li>
+              <HeaderLink
+                href='/about'
                 label='About'
               />
             </li>

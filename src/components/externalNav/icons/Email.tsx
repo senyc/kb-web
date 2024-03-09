@@ -1,12 +1,11 @@
-import { CaptchaExtensionProps } from "@annotations";
-
-export default function Email({ onClick }: CaptchaExtensionProps){
+export default function Email(){
   return (
-    <button
+    <a
       className='duration-150 ease-in hover:scale-110'
       aria-label='Email'
-      onClick={onClick}
-      title='Email'>
+      target='_self'
+      href="/contact"
+      title='Contact'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -24,6 +23,6 @@ export default function Email({ onClick }: CaptchaExtensionProps){
           points='22,6 12,13 2,6'
         />
       </svg>
-    </button>
+    </a>
   );
 }

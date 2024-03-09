@@ -1,20 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   darkMode: 'class',
-  plugins: [require('daisyui')],
-  daisyui: {
-    themes: [
-      {
-        dark: {
-          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
-          'base-100': "#1D1D20",
-        },
-        light: {
-          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
-        },
-      },
-    ],
-  },
+  plugins: [require('daisyui'), {
+    themes: ["light", "dark"],
+    strategy: 'class', // only generate classes don't add opinions
+  }],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -43,3 +34,4 @@ module.exports = {
     },
   },
 };
+export default config;

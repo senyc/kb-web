@@ -3,7 +3,8 @@ import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
 import HeaderNavigation from '@components/header/HeaderNavigation';
-import './globals.css';
+import '../globals.css';
+import InitializeColorScheme from '../initializeColorScheme';
 
 const inter = Inter({
   weight: ['300', '700'],
@@ -18,12 +19,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
-    <html lang='en' data-theme='dark' className='dark h-full'>
-      <body className={`${inter.className} bg-white dark:bg-dark-bg text-light-text dark:text-dark-text tracking-wide flex-col flex w-full h-full`}>
+    <html lang='en' className='hidden'>
+      <InitializeColorScheme />
+      <body className={`${inter.className} dark:bg-dark-bg text-light-text dark:text-dark-text tracking-wide flex-col flex w-full h-full`}>
         <header className='bg-light-header dark:bg-dark-header'>
           <HeaderNavigation />
         </header>
-        <main className='dark:text-dark-text flex-grow'>
+        <main className='dark:text-dark-text h-full flex-grow'>
           {children}
           <Analytics />
         </main>

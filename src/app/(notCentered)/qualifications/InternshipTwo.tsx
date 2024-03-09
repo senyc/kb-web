@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import autoOwners from '../../images/AutoOwners.jpeg';
+import autoOwners from '../../../images/AutoOwners.jpeg';
 import TechnologiesUsed from "@components/information/TechnologiesUsed";
 
 export default function InternshipOne() {

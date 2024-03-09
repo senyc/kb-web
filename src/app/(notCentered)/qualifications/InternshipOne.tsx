@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import haworthHQ from '../../images/haworthHQ.jpg';
+import haworthHQ from '../../../images/haworthHQ.jpg';
 import TechnologiesUsed from "@components/information/TechnologiesUsed";
 
 export default function InternshipOne() {
