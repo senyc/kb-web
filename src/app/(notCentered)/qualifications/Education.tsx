@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import mtuLogo from '../../images/MTULogo.jpg';
+import mtuLogo from '../../../images/MTULogo.jpg';
 
 export default function Education() {
   return (

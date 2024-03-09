@@ -24,16 +24,16 @@ export default function HamburgerNavigationMenu() {
           className=" menu menu-lg dropdown-content dark:bg-dark-header rounded-box bg-light-header -right-12 top-9 z-[1] mt-3 block p-2 shadow">
           <li>
             <HeaderLink
-              href={'/contact/resumeRequest'}
-              label='Resume'
+              href='/qualifications'
+              label='Qualifications'
               underline={false}
               onClick={toggleOpen}
             />
           </li>
           <li>
             <HeaderLink
-              href='/qualifications'
-              label='Qualifications'
+              href={'/contact/resumeRequest'}
+              label='Resume'
               underline={false}
               onClick={toggleOpen}
             />

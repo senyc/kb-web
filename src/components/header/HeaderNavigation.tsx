@@ -12,14 +12,14 @@ export default function HeaderNavigation() {
           <ul className='hidden flex-row gap-4 sm:flex'>
             <li>
               <HeaderLink
-                href='contact/resumeRequest'
-                label='Resume'
+                href='/qualifications'
+                label='Qualifications'
               />
             </li>
             <li>
               <HeaderLink
-                href='/qualifications'
-                label='Qualifications'
+                href='contact/resumeRequest'
+                label='Resume'
               />
             </li>
             <li>
