@@ -21,9 +21,19 @@ const initialState = {
 interface ContactFormProps {
   defaultReasonForContact?: ReasonForContact;
 }
+
+function SpinningIcon() {
+  return (
+    <svg className="my-auto ml-1.5 mr-3 h-5 w-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>);
+}
+
 export default function ContactForm({ defaultReasonForContact = ReasonForContact.Default }: ContactFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   // We should set this in a useEffect hook in case the value passed in from the url is not valid
   const [reasonForContact, setReasonForContact] = useState(defaultReasonForContact);
   const [phone, setPhone] = useState("");
@@ -31,7 +41,6 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
   const [preferredCommunication, setPreferredCommunication] = useState("email");
 
   const recaptchaRef = createRef<ReCAPTCHA>();
-
   const inputRef = useRef<HTMLFormElement>(null);
 
   const [state, action] = useFormState(sendContact, initialState);
@@ -39,8 +48,10 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
   useEffect(() => {
     if (state.status === "success") {
       toast.info(state.message);
+      setIsLoading(false);
     } else if (state.status === "failure") {
       toast.warn(state.message);
+      setIsLoading(false);
     }
   }, [state]);
 
@@ -63,10 +74,12 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
     return true;
   };
   const onSubmit = async (e: any) => {
+    setIsLoading(true);
     // Don't automatically send the form action until captcha function completes
     e.preventDefault();
     if (!phoneNumberValid()) {
       toast.warn("Please enter in a valid phone number and try again");
+      setIsLoading(false);
       return;
     }
 
@@ -74,8 +87,10 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
       const token = await recaptchaRef.current?.executeAsync();
       if (token != null) {
         inputRef.current && inputRef.current.requestSubmit();
+        inputRef.current && inputRef.current.reset();
       } else {
         toast.warn("Please try submitting again");
+        setIsLoading(false);
       }
     }
   };
@@ -221,8 +236,9 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
           onClick={onSubmit}
         >
           {"Submit"}
-        </button>)
-        }
+        </button>)}
+
+        {isLoading && <SpinningIcon />}
         <button
           type="button"
           className="input input-bordered w-24 rounded-lg border-[.5px] p-0 font-normal "
