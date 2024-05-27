@@ -43,6 +43,15 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
   const recaptchaRef = createRef<ReCAPTCHA>();
   const inputRef = useRef<HTMLFormElement>(null);
 
+  const resetFormEntries = () => {
+    setName("");
+    setPhone("");
+    setEmail("");
+    setReasonForContact(defaultReasonForContact);
+    setAdditionalComments("");
+    setPreferredCommunication("");
+  };
+
   const [state, action] = useFormState(sendContact, initialState);
 
   useEffect(() => {
@@ -87,7 +96,7 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
       const token = await recaptchaRef.current?.executeAsync();
       if (token != null) {
         inputRef.current && inputRef.current.requestSubmit();
-        inputRef.current && inputRef.current.reset();
+        resetFormEntries();
       } else {
         toast.warn("Please try submitting again");
         setIsLoading(false);
