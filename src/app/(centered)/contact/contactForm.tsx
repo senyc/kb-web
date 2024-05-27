@@ -24,7 +24,7 @@ interface ContactFormProps {
 
 function SpinningIcon() {
   return (
-    <svg className="my-auto ml-1.5 mr-3 h-5 w-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <svg className="my-auto h-5 w-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
     </svg>);
@@ -230,15 +230,17 @@ export default function ContactForm({ defaultReasonForContact = ReasonForContact
       <div
         className="mt-5 flex flex-row justify-between"
       >
-        {recaptchaRef && (<button
-          disabled={name.length <= 0 || email.length <= 0 || reasonForContact.length <= 0}
-          className="input input-bordered w-24 rounded-lg border-[.5px] p-0 font-normal disabled:cursor-not-allowed disabled:border-[.5px] disabled:border-gray-200 disabled:border-opacity-20 disabled:opacity-90"
-          onClick={onSubmit}
-        >
-          {"Submit"}
-        </button>)}
+        <div className="flex flex-row gap-6">
+          {recaptchaRef && (<button
+            disabled={name.length <= 0 || email.length <= 0 || reasonForContact.length <= 0}
+            className="input input-bordered w-24 rounded-lg border-[.5px] p-0 font-normal disabled:cursor-not-allowed disabled:border-[.5px] disabled:border-gray-200 disabled:border-opacity-20 disabled:opacity-90"
+            onClick={onSubmit}
+          >
+            {"Submit"}
+          </button>)}
 
-        {isLoading && <SpinningIcon />}
+          {isLoading && <SpinningIcon />}
+        </div>
         <button
           type="button"
           className="input input-bordered w-24 rounded-lg border-[.5px] p-0 font-normal "
