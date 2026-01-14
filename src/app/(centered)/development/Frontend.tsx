@@ -6,10 +6,10 @@ export default function Frontend() {
       <SkillList
         skills={
           [
-            { heading: 'React.js', experienceWith: '3 year' },
-            { heading: 'TypeScript', experienceWith: '3 year' },
+            { heading: 'React.js', experienceWith: '3 years' },
+            { heading: 'TypeScript', experienceWith: '3 years' },
             { heading: 'JavaScript', experienceWith: '5 years' },
-            { heading: 'Next.js', experienceWith: '3 year' },
+            { heading: 'Next.js', experienceWith: '3 years' },
             { heading: 'HTML5', experienceWith: '5 years' },
           ]}
       />

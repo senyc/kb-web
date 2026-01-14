@@ -6,7 +6,7 @@ export default function Backend() {
       <SkillList
         skills={
           [
-            { heading: 'Node.js', experienceWith: '1 year' },
+            { heading: 'Node.js', experienceWith: '3 years' },
             { heading: 'Go', experienceWith: '2 years' },
             { heading: 'Python', experienceWith: '4 years' },
             { heading: 'C', experienceWith: '3 years' },
