@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
 import { Direction } from 'src/lib/annotations';
@@ -19,7 +19,7 @@ interface ArrowTabProps {
   * These items should be in the same order as the tab labels
   * they are related to
   */
-  tabContent: Array<JSX.Element>;
+  tabContent: Array<ReactNode>;
 }
 
 const getAnimationClass = (direction?: Direction) => {

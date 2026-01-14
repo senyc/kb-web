@@ -1,20 +1,22 @@
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import ContactForm from "../contactForm";
 import { ReasonForContact } from "@annotations";
 
-
-export default async function Contact({ params }: { params: { reasonForContact: ReasonForContact}; }) {
+export default async function Contact({
+  params,
+}: {
+  params: Promise<{ reasonForContact: ReasonForContact }>;
+}) {
+  const reasonForContact = (await params).reasonForContact;
   return (
     <>
-      <section className='flex h-full flex-col items-center justify-center'>
-        <h1 className=' w-full max-w-3xl p-4 text-left text-4xl font-semibold sm:text-5xl'>
+      <section className="flex h-full flex-col items-center justify-center">
+        <h1 className="w-full max-w-3xl p-4 text-left text-4xl font-semibold sm:text-5xl">
           Contact Me
         </h1>
-        <ContactForm  
-          defaultReasonForContact={params.reasonForContact}
-        />
+        <ContactForm defaultReasonForContact={reasonForContact} />
       </section>
       <ToastContainer
         position="bottom-left"
@@ -31,4 +33,3 @@ export default async function Contact({ params }: { params: { reasonForContact: 
     </>
   );
 }
-

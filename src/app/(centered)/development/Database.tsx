@@ -6,9 +6,10 @@ export default function System() {
       <SkillList
         skills={
           [
-            { heading: 'SQL', experienceWith: '1 year' },
-            { heading: 'MySQL', experienceWith: '6 months' },
-            { heading: 'SQL server', experienceWith: '6 months' },
+            { heading: 'SQL', experienceWith: '3 years' },
+            { heading: 'MySQL', experienceWith: '2 years' },
+            { heading: 'SQL server', experienceWith: '1 year' },
+            { heading: 'PostgreSQL', experienceWith: '1 year' },
           ]}
       />
     </>
